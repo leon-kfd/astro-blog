@@ -7,9 +7,9 @@ export default defineConfig(
 	{
 		markdown: {
 			remarkPlugins: [],
-			rehypePlugins: ['rehype-slug', ['rehype-autolink-headings', {
+			rehypePlugins: ['rehype-slug', 'remark-smartypants', 'remark-gfm', ['rehype-autolink-headings', {
 				behavior: 'wrap'
-			}]],
+			}], 'remark-gfm'],
 			shikiConfig: {
 				theme: 'poimandres',
 				langs: [],

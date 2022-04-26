@@ -24,10 +24,18 @@ const {img} = Astro.props;
 		<Navbar>
 			<ThemeChange />
 		</Navbar>
-		<div class="p-4 pb-10">
+		<div class="p-4 pb-10 blog-markdown-wrapper">
 			<slot />
 		</div>
 	</div>
 	<Footer />
 </body>
 </html>
+
+<style lang="scss" is:global>
+.blog-markdown-wrapper {
+	img {
+		max-width: 100%;
+	}
+}
+</style>

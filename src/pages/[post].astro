@@ -22,7 +22,7 @@ const { post: { Content }, post } = Astro.props;
 ---
 <Blog title={post.title} desc={post.desc} img={post.img ? post.img : null}>
 	<div class="flex justify-center">
-		<div class="py-6 prose lg:prose-lg">
+		<div class="py-6 prose lg:prose-lg w-full">
 			{post.img && post.imgWidth && post.imgHeight ?
 				<figure class="flex justify-center">
 					<img src={post.img} alt={post.title} width={post.imgWidth} height={post.imgHeight} class="rounded bg-base-200" />
