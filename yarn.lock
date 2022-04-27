@@ -279,6 +279,11 @@
   resolved "https://registry.npmmirror.com/@emmetio/scanner/-/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==
 
+"@howdyjs/img-zoom@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmmirror.com/@howdyjs/img-zoom/-/img-zoom-2.0.0.tgz#9198765bf1e0033ef139e2e1096bc4497471c8d2"
+  integrity sha512-wzCURDM/aHP0hq+l97SR33iDFMWn5Fym1by+qngI1HmeyDpmDm1mqw1Wn0BG3P7p0EMCz/jQKQkFmVyVj4nV+g==
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.0.6"
   resolved "https://registry.npmmirror.com/@jridgewell/resolve-uri/-/resolve-uri-3.0.6.tgz#4ac237f4dabc8dd93330386907b97591801f7352"

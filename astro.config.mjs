@@ -11,7 +11,7 @@ export default defineConfig(
 				behavior: 'wrap'
 			}], 'remark-gfm'],
 			shikiConfig: {
-				theme: 'poimandres',
+				theme: 'rose-pine-moon',
 				langs: [],
 				wrap: false
 			}

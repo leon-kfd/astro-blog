@@ -1,9 +1,10 @@
 ---
-import "../../style/tailwind.css"
+import "../../style/tailwind.css";
+import "../../style/global.scss";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import ThemeChange from "@components/ThemeChange";
-import Head from '@components/Head'
+import Head from '@components/Head';
 const {title} = Astro.props;
 const {desc} = Astro.props;
 const {img} = Astro.props;
@@ -24,7 +25,7 @@ const {img} = Astro.props;
 		<Navbar>
 			<ThemeChange />
 		</Navbar>
-		<div class="p-4 pb-10 blog-markdown-wrapper">
+		<div class="p-4 pb-10 pt-2 blog-markdown-wrapper">
 			<slot />
 		</div>
 	</div>

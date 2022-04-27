@@ -22,7 +22,7 @@ const { post: { Content }, post } = Astro.props;
 ---
 <Blog title={post.title} desc={post.desc} img={post.img ? post.img : null}>
 	<div class="flex justify-center">
-		<div class="py-6 prose lg:prose-lg w-full">
+		<div class="py-2 prose lg:py-6 lg:prose-lg w-full">
 			{post.img && post.imgWidth && post.imgHeight ?
 				<figure class="flex justify-center">
 					<img src={post.img} alt={post.title} width={post.imgWidth} height={post.imgHeight} class="rounded bg-base-200" />
@@ -41,9 +41,24 @@ const { post: { Content }, post } = Astro.props;
 					<span class="text-sm text-base-content/70">By {post.author}</span>
 				}
 			</div>
-			<div>
+			<div class="article-wrapper">
 				<Content />
 			</div>
 		</div>
 	</div>
 </Blog>
+<script>
+import ImgZoom from '@howdyjs/img-zoom';
+const imgs = [...document.querySelectorAll('.article-wrapper img')];
+imgs.map((img) => {
+	new ImgZoom({
+		el: img,
+		options: {
+			title: img.alt,
+			group: 'article',
+			zoomCursor: true,
+			showCloseBtn: true,
+		}
+	});
+});
+</script>
