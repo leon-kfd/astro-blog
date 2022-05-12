@@ -12,6 +12,7 @@ export type Post = {
 	date: string,
 	file: URL,
 	img: URL,
+	thumbImg: URL,
 }
 
 export function single(post: MarkdownInstance): Post {
