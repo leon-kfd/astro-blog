@@ -2,18 +2,18 @@
 title: 浏览器导航首页设计
 date: 2020-04-04
 desc: 一个浏览器首页站点, 包含可切换的常用搜索引擎搜索功能, 键盘布局添加快捷收藏网站, 并加入键盘按键监听可快速打开, 自定义背景图, 配置同步功能等功能
-img: https://api.lorem.space/image/furniture?w=800&h=500
-imgWidth: 800
-imgHeight: 500
+img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1504292004442-f285299403fa?w=1280
+thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1504292004442-f285299403fa?w=240
 ---
 
-> 2021/11/01更新: 以下内容为旧版网站的记录，站点地址已更新为Howdz起始页项目地址
+> 2021/11/01 更新: 以下内容为旧版网站的记录，站点地址已更新为 Howdz 起始页项目地址
 
 一个浏览器首页站点, 包含可切换的常用搜索引擎搜索功能, 键盘布局添加快捷收藏网站, 并加入键盘按键监听可快速打开, 自定义背景图, 配置同步功能等功能
 
 系统半成品已部署与线上，在线访问：<a href="https://s.kongfandong.cn" target="_blank">https://s.kongfandong.cn</a>
 
 ### 目录
+
 1. [搜索引擎切换功能](#搜索引擎切换功能)
 2. [键盘收藏夹功能](#键盘收藏夹功能)
 3. [背景图切换功能](#背景图切换功能)
@@ -22,7 +22,8 @@ imgHeight: 500
 
 ## 搜索引擎切换功能
 
-该功能时为了便于让用户可快速切换不同的搜索引擎，可以涉及不同领域的搜索，例如常用引擎、视频、翻译等搜索。在搜索框聚焦状态下按Tab键就可按用户规定的顺序快速切换引擎（Shift + Tab向上切换）。
+该功能时为了便于让用户可快速切换不同的搜索引擎，可以涉及不同领域的搜索，例如常用引擎、视频、翻译等搜索。在搜索框聚焦状态下按 Tab 键就可按用户规定的顺序快速切换引擎（Shift + Tab 向上切换）。
+
 ```js
 handleInputKeyDown (e) {
   if (e.keyCode === 9) {
@@ -40,43 +41,42 @@ handleInputKeyDown (e) {
 }
 ```
 
-寻找目前主流搜索引擎关键字拼接规则记录列表和寻找Icon保存到VUEX中，目前设置了默认引擎为Bing国内、国外、百度，然后备用设置了Google、搜狗、Bilibili、淘宝等。用户可以在设置页通过拖拽切换引擎顺序与添加备用搜索到当前。
+寻找目前主流搜索引擎关键字拼接规则记录列表和寻找 Icon 保存到 VUEX 中，目前设置了默认引擎为 Bing 国内、国外、百度，然后备用设置了 Google、搜狗、Bilibili、淘宝等。用户可以在设置页通过拖拽切换引擎顺序与添加备用搜索到当前。
 
-拖拽功能使用vuedragable实现，将当前引擎与备用引擎设为同一个group，即可让两者可以互相拖拽，并且通过pull设置实现当engineList长度为1是不可再向外拖出。
+拖拽功能使用 vuedragable 实现，将当前引擎与备用引擎设为同一个 group，即可让两者可以互相拖拽，并且通过 pull 设置实现当 engineList 长度为 1 是不可再向外拖出。
+
 ```html
 ...
 <div class="text">当前引擎组</div>
-<draggable :list="engineList"
-            :group="{ name: 'engine',pull: engineList.length > 1 }"
-            @end="handleDragEnd">
-  <transition-group type="transition"
-                    name="flip-list"
-                    class="now-engine-list engine-list">
-    <div class="engine-list-item"
-          v-for="item in engineList"
-          :key="item.name">
-      <img :src="item.iconPath"
-            alt="icon"
-            width="24"
-            height="24">
+<draggable
+  :list="engineList"
+  :group="{ name: 'engine',pull: engineList.length > 1 }"
+  @end="handleDragEnd"
+>
+  <transition-group
+    type="transition"
+    name="flip-list"
+    class="now-engine-list engine-list"
+  >
+    <div class="engine-list-item" v-for="item in engineList" :key="item.name">
+      <img :src="item.iconPath" alt="icon" width="24" height="24" />
       <div class="text">{{item.name}}</div>
     </div>
   </transition-group>
 </draggable>
 <div class="text">备用引擎组</div>
-<draggable :list="backupEngineList"
-            group="engine"
-            @end="handleDragEnd">
-  <transition-group type="transition"
-                    name="flip-list"
-                    class="backupEngineList engine-list">
-    <div class="engine-list-item"
-          v-for="item in backupEngineList"
-          :key="item.name">
-      <img :src="item.iconPath"
-            alt="icon"
-            width="24"
-            height="24">
+<draggable :list="backupEngineList" group="engine" @end="handleDragEnd">
+  <transition-group
+    type="transition"
+    name="flip-list"
+    class="backupEngineList engine-list"
+  >
+    <div
+      class="engine-list-item"
+      v-for="item in backupEngineList"
+      :key="item.name"
+    >
+      <img :src="item.iconPath" alt="icon" width="24" height="24" />
       <div class="text">{{item.name}}</div>
     </div>
   </transition-group>
@@ -89,30 +89,33 @@ handleInputKeyDown (e) {
 用户可通过点击模拟键盘按键快速跳转到收藏好的网站，未设置时点击则弹窗让用户添加。
 
 主要功能实现：
-1. 截取用户输入的http地址中的域名，然后通过“域名 + /favicon.ico”获取主流网站的Icon，当获取不到时，使用截取Title的首字符作为Icon。亦可使用谷歌的Favicon服务，通过“http://www.google.cn/s2/favicons?domain= + 域名”获取网站Icon，但获取出来的都是固定16px x 16px大小。
-2. 使用Flex布局实现模拟键盘布局
-3. 监听按键添加事件，window.open打开用户收藏的网站
-4. 使用个人组件<a href="https://kongfandong.cn/howdy/animation-dialog" target="_blank">Animation Dialog</a>实现动画弹窗(Where open where close交互)
+
+1. 截取用户输入的 http 地址中的域名，然后通过“域名 + /favicon.ico”获取主流网站的 Icon，当获取不到时，使用截取 Title 的首字符作为 Icon。亦可使用谷歌的 Favicon 服务，通过“http://www.google.cn/s2/favicons?domain= + 域名”获取网站 Icon，但获取出来的都是固定 16px x 16px 大小。
+2. 使用 Flex 布局实现模拟键盘布局
+3. 监听按键添加事件，window.open 打开用户收藏的网站
+4. 使用个人组件<a href="https://kongfandong.cn/howdy/animation-dialog" target="_blank">Animation Dialog</a>实现动画弹窗(Where open where close 交互)
 
 ```html
-<img class="icon"
-      :src="`${userSettingKeyMap[key].url.match(/^(\w+:\/\/)?([^\/]+)/i) ? userSettingKeyMap[key].url.match(/^(\w+:\/\/)?([^\/]+)/i)[0] : ''}/favicon.ico`"
-      alt="link"
-      @load="hanldeImgLoad"
-      @error="handleImgError">
+<img
+  class="icon"
+  :src="`${userSettingKeyMap[key].url.match(/^(\w+:\/\/)?([^\/]+)/i) ? userSettingKeyMap[key].url.match(/^(\w+:\/\/)?([^\/]+)/i)[0] : ''}/favicon.ico`"
+  alt="link"
+  @load="hanldeImgLoad"
+  @error="handleImgError"
+/>
 <div class="no-icon">{{userSettingKeyMap[key].remark.slice(0,1)}}</div>
 ```
 
 ![添加展示](https://s2.loli.net/2021/12/04/kcrP38wJedoSsqT.gif)
 
-
 ## 背景图切换功能
 
-背景图使用的图片来自免费无版权图片壁纸网站<a href="https://unsplash.com/" target="_blank">Unplash</a>，并使用其提供的<a href="https://unsplash.com/documentation" target="_blank">API服务</a>获取JSON图片列表。其Api接口不可直接调用，需要注册获取到accessKey之后将其放在请求中才可使用接口服务，且普通用户每小时只可调用50次，因此不合适直接把获取unsplash图片的请求放在前端。
+背景图使用的图片来自免费无版权图片壁纸网站<a href="https://unsplash.com/" target="_blank">Unplash</a>，并使用其提供的<a href="https://unsplash.com/documentation" target="_blank">API 服务</a>获取 JSON 图片列表。其 Api 接口不可直接调用，需要注册获取到 accessKey 之后将其放在请求中才可使用接口服务，且普通用户每小时只可调用 50 次，因此不合适直接把获取 unsplash 图片的请求放在前端。
 
 ### 后端实现
 
-后端使用Nodejs每天定时调用1次获取Unsplash最新图片的接口，并把返回数据保留为json文件，然后由Nodejs提供接口，即背景图片以天为单位更新。
+后端使用 Nodejs 每天定时调用 1 次获取 Unsplash 最新图片的接口，并把返回数据保留为 json 文件，然后由 Nodejs 提供接口，即背景图片以天为单位更新。
+
 ```js
 // Nodejs后端服务
 const { unsplashApiKey } = require('../config/config') // 调用UnsplashAPI的Access Key
@@ -177,169 +180,182 @@ runUnsplashSchedule()
 
 ### 前端处理
 
-前端使用Vuex保留用户每次切换获取的图片缓存，在不刷新页面下，同一张图片不需要再次加载。并将最后一次获取到的图片转成Base64保存到Localstorage里面的，此时要注意多数浏览器Localstorage最大存储5M，需要做下判断，图片过大就不进行缓存了。
+前端使用 Vuex 保留用户每次切换获取的图片缓存，在不刷新页面下，同一张图片不需要再次加载。并将最后一次获取到的图片转成 Base64 保存到 Localstorage 里面的，此时要注意多数浏览器 Localstorage 最大存储 5M，需要做下判断，图片过大就不进行缓存了。
 
-关于获取图片资源，一开始是使用new Image()方案然后监听onload事件用canvas将Img转成Base64来实现。但是后面发现canvas将Unsplash图片转成base64会有跨域问题，尽管将<a href="https://www.jianshu.com/p/473cc1ec0b7e" target="_blank">Img的crossOrigin属性设成'anonymous'</a>，在Chrome下没问题，但是用Safari依然报跨域。最后采用了另外一种方案，使用Ajax去加载图片资源。需要将responseType改为arraybuffer方式，然后读取二进制拼接成base64。使用Ajax方式还有一个优点，就是可以获取到加载进度，直接用img的src去获取无法监听图片下载进度。
+关于获取图片资源，一开始是使用 new Image()方案然后监听 onload 事件用 canvas 将 Img 转成 Base64 来实现。但是后面发现 canvas 将 Unsplash 图片转成 base64 会有跨域问题，尽管将<a href="https://www.jianshu.com/p/473cc1ec0b7e" target="_blank">Img 的 crossOrigin 属性设成'anonymous'</a>，在 Chrome 下没问题，但是用 Safari 依然报跨域。最后采用了另外一种方案，使用 Ajax 去加载图片资源。需要将 responseType 改为 arraybuffer 方式，然后读取二进制拼接成 base64。使用 Ajax 方式还有一个优点，就是可以获取到加载进度，直接用 img 的 src 去获取无法监听图片下载进度。
 
-**ajax获取图片为base64**
+**ajax 获取图片为 base64**
+
 ```js
 // ajax读取图片为base64
 // processFn为监听进度的回调
-export const getBase64ByAjax = (url, formatter = 'image/png', processFn) => {
+export const getBase64ByAjax = (url, formatter = "image/png", processFn) => {
   return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', url, true)
-    xhr.responseType = 'arraybuffer'
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.responseType = "arraybuffer";
     xhr.onload = (e) => {
       if (xhr.status === 200) {
-        const uInt8Array = new Uint8Array(xhr.response)
-        let i = uInt8Array.length
-        const binaryString = new Array(i)
+        const uInt8Array = new Uint8Array(xhr.response);
+        let i = uInt8Array.length;
+        const binaryString = new Array(i);
         while (i--) {
-          binaryString[i] = String.fromCharCode(uInt8Array[i])
+          binaryString[i] = String.fromCharCode(uInt8Array[i]);
         }
-        const data = binaryString.join('')
-        const base64 = window.btoa(data)
-        const dataURL = 'data:' + (formatter || 'image/png') + ';base64,' + base64
-        resolve(dataURL)
+        const data = binaryString.join("");
+        const base64 = window.btoa(data);
+        const dataURL =
+          "data:" + (formatter || "image/png") + ";base64," + base64;
+        resolve(dataURL);
       }
-    }
+    };
     xhr.onerror = (e) => {
-      reject(e)
-    }
+      reject(e);
+    };
     xhr.onprogress = (e) => {
-      processFn && processFn(e)
-    }
-    xhr.send()
-  })
-}
+      processFn && processFn(e);
+    };
+    xhr.send();
+  });
+};
 ```
 
-**Vuex记录图片加载及其缓存**
+**Vuex 记录图片加载及其缓存**
+
 ```js
 export default new Vuex.Store({
   state: {
     // ... //
     unsplashImgList: [],
     downloadingImgInfo: null,
-    downloadingImgBase64: '',
+    downloadingImgBase64: "",
     downloadingProcess: 0,
-    cacheImg: {}
+    cacheImg: {},
     // ... //
   },
   mutations: {
     // ... //
-    setEngineList (state, engineList) {
-      state.engineList = engineList
+    setEngineList(state, engineList) {
+      state.engineList = engineList;
     },
-    setBackupEngineList (state, backupEngineList) {
-      state.backupEngineList = backupEngineList
+    setBackupEngineList(state, backupEngineList) {
+      state.backupEngineList = backupEngineList;
     },
-    setUnsplashImgList (state, unsplashImgList) {
-      state.unsplashImgList = unsplashImgList
+    setUnsplashImgList(state, unsplashImgList) {
+      state.unsplashImgList = unsplashImgList;
     },
-    setDownloadingImgInfo (state, downloadingImgInfo) {
-      state.downloadingImgInfo = downloadingImgInfo
+    setDownloadingImgInfo(state, downloadingImgInfo) {
+      state.downloadingImgInfo = downloadingImgInfo;
     },
-    setDownloadingProcess (state, downloadingProcess) {
-      state.downloadingProcess = downloadingProcess
+    setDownloadingProcess(state, downloadingProcess) {
+      state.downloadingProcess = downloadingProcess;
     },
-    setDownloadingImgBase64 (state, base64) {
-      document.body.style.setProperty('--textColor', base64 ? '#f8f8f9' : '#262626')
-      document.body.style.setProperty('--textShadowColor', base64 ? '#262626' : 'transparent')
-      state.downloadingImgBase64 = base64
+    setDownloadingImgBase64(state, base64) {
+      document.body.style.setProperty(
+        "--textColor",
+        base64 ? "#f8f8f9" : "#262626"
+      );
+      document.body.style.setProperty(
+        "--textShadowColor",
+        base64 ? "#262626" : "transparent"
+      );
+      state.downloadingImgBase64 = base64;
       const userTodayImgCache = {
         date: getToday(),
-        base64
-      }
-      const toJson = JSON.stringify(userTodayImgCache)
+        base64,
+      };
+      const toJson = JSON.stringify(userTodayImgCache);
       if (toJson.length < 3.5 * 1024 * 1024) {
-        localStorage.setItem('userTodayImgCache', JSON.stringify(userTodayImgCache))
+        localStorage.setItem(
+          "userTodayImgCache",
+          JSON.stringify(userTodayImgCache)
+        );
       }
     },
-    setCacheImg (state, { imgId, base64 }) {
+    setCacheImg(state, { imgId, base64 }) {
       state.cacheImg = {
         ...state.cacheImg,
-        [imgId]: base64
-      }
-    }
+        [imgId]: base64,
+      };
+    },
     // ... //
   },
   actions: {
     // ... //
-    getDownloadingImg ({ commit, state }, downloadingImg) {
-      const imgId = downloadingImg.id
+    getDownloadingImg({ commit, state }, downloadingImg) {
+      const imgId = downloadingImg.id;
       if (state.cacheImg[imgId]) {
-        commit('setDownloadingImgBase64', state.cacheImg[imgId])
+        commit("setDownloadingImgBase64", state.cacheImg[imgId]);
       } else {
-        let imgURL
+        let imgURL;
         if (document.body.clientWidth >= 1440) {
-          imgURL = downloadingImg.urls.regular.replace('w=1080', 'w=1920').replace('q=80', 'q=70')
+          imgURL = downloadingImg.urls.regular
+            .replace("w=1080", "w=1920")
+            .replace("q=80", "q=70");
         } else {
-          imgURL = downloadingImg.urls.regular.replace('q=80', 'q=70')
+          imgURL = downloadingImg.urls.regular.replace("q=80", "q=70");
         }
-        commit('setDownloadingImgInfo', downloadingImg)
-        commit('setDownloadingProcess', 0)
+        commit("setDownloadingImgInfo", downloadingImg);
+        commit("setDownloadingProcess", 0);
         const processFn = (e) => {
-          const process = ~~(e.loaded / e.total * 100)
-          commit('setDownloadingProcess', process)
-        }
-        getBase64ByAjax(imgURL, 'image/png', processFn).then(data => {
-          const dataURL = data
-          commit('setDownloadingImgBase64', dataURL)
-          commit('setCacheImg', { imgId, base64: dataURL })
-          commit('setDownloadingImgInfo', null)
-        })
+          const process = ~~((e.loaded / e.total) * 100);
+          commit("setDownloadingProcess", process);
+        };
+        getBase64ByAjax(imgURL, "image/png", processFn).then((data) => {
+          const dataURL = data;
+          commit("setDownloadingImgBase64", dataURL);
+          commit("setCacheImg", { imgId, base64: dataURL });
+          commit("setDownloadingImgInfo", null);
+        });
       }
-    }
+    },
     // ... //
-  }
-})
+  },
+});
 ```
 
 ![背景切换展示](https://s2.loli.net/2021/12/04/leuj5U6YL7GzDZo.gif)
 
-*当前并未实现自定义图片上传功能，后续进行优化*
+_当前并未实现自定义图片上传功能，后续进行优化_
 
 ## 配置同步功能
 
 该功能未在线上版本实现，但已有实现思路。
 
 1. 方案一：用户注册账号，登录后自动同步配置。该方案为传统方案，但是系统功能单一，用上账户功能对用户来说是过于麻烦，而且涉及到账号安全问题。（不推荐）
-2. 方案二：用户点击保存配置按钮后生成一串AccessKey随机字符串，在另一端设备用户输入该字符串发送请求，后端返回改字符串对应的配置信息。随机字符串生成后有效期为24小时，后端定时删除。（推荐）
-3. 方案三：导出json文件进行同步。（不推荐）
+2. 方案二：用户点击保存配置按钮后生成一串 AccessKey 随机字符串，在另一端设备用户输入该字符串发送请求，后端返回改字符串对应的配置信息。随机字符串生成后有效期为 24 小时，后端定时删除。（推荐）
+3. 方案三：导出 json 文件进行同步。（不推荐）
 
 ## 关于优化
 
 ### 打包优化
 
-项目使用到的vue、vuex等资源使用线上CDN服务，可减少打包大小并减轻服务端带宽压力。使用Vue-cli3的项目在vue.config.js中加入externals配置，不打包vue相关资源，并在index.html加入Vue CDN资源。
+项目使用到的 vue、vuex 等资源使用线上 CDN 服务，可减少打包大小并减轻服务端带宽压力。使用 Vue-cli3 的项目在 vue.config.js 中加入 externals 配置，不打包 vue 相关资源，并在 index.html 加入 Vue CDN 资源。
+
 ```js
 // vue.config.js
 module.exports = {
   // ...
-  configureWebpack: config => {
+  configureWebpack: (config) => {
     config.externals = {
-      vue: 'Vue',
-      vuex: 'Vuex',
+      vue: "Vue",
+      vuex: "Vuex",
       // 'vue-router': 'VueRouter',
       // axios: 'axios'
-    }
-  }
+    };
+  },
   // ...
-}
+};
 ```
-*因系统功能完全是单页面完成，删除了vue-router功能，涉及请求不多也将axios改为原生ajax实现*
+
+_因系统功能完全是单页面完成，删除了 vue-router 功能，涉及请求不多也将 axios 改为原生 ajax 实现_
 
 ### 图片优化
 
-1. 由于Unsplash为境外站点，国内访问有可能速度很慢。可以考虑在nodejs进行获取图片请求后，再将每张图片保存到本地。或者为了减轻服务器带宽压力，可以将图片上传到七牛云或腾讯云的提供的图片资源服务。
-2. Unsplash提供的图片api接口，可以判断当前用户的设备，例如区分手机端和PC端，然后更改请求部分参数使其返回不同大小的图片。
+1. 由于 Unsplash 为境外站点，国内访问有可能速度很慢。可以考虑在 nodejs 进行获取图片请求后，再将每张图片保存到本地。或者为了减轻服务器带宽压力，可以将图片上传到七牛云或腾讯云的提供的图片资源服务。
+2. Unsplash 提供的图片 api 接口，可以判断当前用户的设备，例如区分手机端和 PC 端，然后更改请求部分参数使其返回不同大小的图片。
 3. 将图片缓存到浏览器中。
-
-
 
 系统半成品已部署与线上，在线访问：<a href="https://s.kongfandong.cn" target="_blank">https://s.kongfandong.cn</a>
 
-*以上内容未经授权请勿随意转载。*
-
+_以上内容未经授权请勿随意转载。_

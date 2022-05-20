@@ -2,9 +2,8 @@
 title: Vue3上手, 使用vite实现一个简单的Todolist应用
 date: 2020-05-16
 desc: 用Vue3的CompositionApi实现一个简单的todolist应用，使用vite搭建，其中结合了vuex、typescript、sass在vue3应用中的简单使用。
-img: https://api.lorem.space/image/furniture?w=800&h=500
-imgWidth: 800
-imgHeight: 500
+img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1586281380117-5a60ae2050cc?w=1280
+thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1586281380117-5a60ae2050cc?w=240
 ---
 
 - Git 仓库: <a href="https://github.com/leon-kfd/TodoListVitePratice" target="_blank" style="display:inline-block">https://github.com/leon-kfd/TodoListVitePratice</a>
