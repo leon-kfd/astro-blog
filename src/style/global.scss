@@ -1,3 +1,45 @@
 #__imgZoomMask #__closeBtn {
   right: 20px !important;
 }
+
+.outlink-icon {
+  display: inline-flex;
+}
+
+.project-title-link {
+  text-decoration: none;
+  svg {
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.4em;
+    display: none;
+    path {
+      fill: currentColor;
+    }
+  }
+  &:hover {
+    text-decoration: underline;
+    svg {
+      display: inline-block;
+    }
+  }
+}
+.outlink-wrapper {
+  margin-bottom: 0.3em;
+  font-size: 0.8em;
+  & > a {
+    text-decoration: none;
+    margin-right: 1em;
+  }
+}
+
+.project-content {
+  summary {
+    cursor: pointer;
+  }
+  .howdy-component {
+    li > p {
+      margin: 0;
+    }
+  }
+}

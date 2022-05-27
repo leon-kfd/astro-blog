@@ -1,13 +1,100 @@
 ---
 import Page from "@layouts/page";
+const weightMap = {
+	Vue: {
+		weight: 9,
+		url: 'https://cn.vuejs.org/'
+	},
+	Nodejs: {
+		weight: 6,
+		url: 'http://nodejs.cn/api/'
+	},
+	Vite: {
+		weight: 6,
+		url: 'https://cn.vitejs.dev/'
+	},
+	MySQL: {
+		weight: 6,
+		url: 'https://www.mysql.com/'
+	},
+	Nginx: {
+		weight: 5,
+		url: 'https://www.nginx.cn/doc/'
+	},
+	PHP: {
+		weight: 2,
+		url: 'https://www.php.net/'
+	},
+	Apache: {
+		weight: 2,
+		url: 'http://httpd.apache.org/docs/2.4/'
+	},
+	Koa: {
+		weight: 4,
+		url: 'https://koa.bootcss.com/'
+	},
+	Eggjs: {
+		weight: 3,
+		url: 'https://eggjs.org/zh-cn/index.html'
+	},
+	React: {
+		weight: 5,
+		url: 'https://react.docschina.org/'
+	},
+	Echart: {
+		weight: 4,
+		url: 'https://www.echartsjs.com/zh/index.html'
+	},
+	Canvas: {
+		weight: 5,
+		url: 'https://www.w3school.com.cn/html5/html5_ref_canvas.asp'
+	},
+	Webpack: {
+		weight: 4,
+		url: 'https://www.webpackjs.com/'
+	},
+	Nuxtjs: {
+		weight: 4,
+		url: 'https://zh.nuxtjs.org/'
+	},
+	Puppeteer: {
+		weight: 4,
+		url: 'https://pptr.dev/'
+	},
+	Git: {
+		weight: 5,
+		url: 'https://git-scm.com/'
+	},
+	Konva: {
+		weight: 5,
+		url: 'https://konvajs.org/docs/index.html'
+	},
+	Gatsby: {
+		weight: 2,
+		url: 'https://www.gatsbyjs.org/'
+	},
+	Taro: {
+		weight: 4,
+		url: 'https://taro-docs.jd.com/taro/docs/README'
+	}
+}
+const tagsList = Object.keys(weightMap).map(key => {
+	return { name: key, weight: weightMap[key].weight, size: Math.sqrt(weightMap[key].weight) * 4, url: weightMap[key].url }
+}).sort((a, b) => b.weight - a.weight)
 ---
 
 <Page title="About me">
-	<h1>About me</h1>
-	<p>
-	Molestias laudantium dolorem impedit quam eaque suscipit voluptatem vel. Sit et sit autem quae dicta repellat magnam. Iste corporis nihil enim nobis. Ea omnis qui illo ratione. Et eius est mollitia.
-	Id dicta cumque saepe enim reprehenderit quidem quis mollitia sit. Aspernatur quia doloribus ipsa. Soluta quis necessitatibus eaque dolorem sunt voluptates neque. Sit cumque dolor distinctio. Fugiat nostrum consequatur.
-	Cum vitae explicabo aspernatur rerum. Tenetur possimus quos eveniet. Repellat eveniet repellat maiores magnam voluptas dolor. Mollitia possimus laborum unde eius sunt. Repellat eos possimus nulla cum accusamus numquam labore dolore.
-	Molestias laudantium dolorem impedit quam eaque suscipit voluptatem vel. Sit et sit autem quae dicta repellat magnam. Iste corporis nihil enim nobis. Ea omnis qui illo ratione. Et eius est mollitia.
-	</p>
+	<h2 class="mt-10">Base</h2>
+	<section class="content">
+		<ul class="base-list">
+			<li>🔭 I’m currently working as a Front-end Developer in Guangzhou, China</li>
+			<li>🌱 I’m currently learning Typescript, Vite, Threejs</li>
+			<li>💬 Ask me about anything related to Javascript, Node, Vue</li>
+			<li>📫 How to reach me: <a href="mailto://kfd_personal@163.com">kfd_personal@163.com</a></li>
+		</ul>
+	</section>
+	<h2 class="mt-10">Tags</h2>
+	<section class="flex" style="flex-wrap: wrap">
+		{tagsList.map(tag => <a href={tag.url} class="mr-4 mb-4" target="_blank">{tag.name}</a>)}
+	</section>
 </Page>
