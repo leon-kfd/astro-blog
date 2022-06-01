@@ -84,16 +84,45 @@ const tagsList = Object.keys(weightMap).map(key => {
 ---
 
 <Page title="About me">
-	<h2 class="mt-10">Base</h2>
+	<h2 class="mt-10 uppercase title-decoration">Base</h2>
 	<section class="content">
 		<ul class="base-list">
-			<li>🔭 I’m currently working as a Front-end Developer in Guangzhou, China</li>
-			<li>🌱 I’m currently learning Typescript, Vite, Threejs</li>
-			<li>💬 Ask me about anything related to Javascript, Node, Vue</li>
-			<li>📫 How to reach me: <a href="mailto://kfd_personal@163.com">kfd_personal@163.com</a></li>
+			<li>🚀 I'm an open source project maintainer of <a href="./project">this project</a>.</li>
+			<li>🔭 I'm currently working as a Front-end Developer in Guangzhou, China.</li>
+			<li>🌱 I'm currently learning Typescript, Vite, Threejs.</li>
+			<li>💬 Ask me about anything related to Javascript, Node, Vue.</li>
 		</ul>
 	</section>
-	<h2 class="mt-10">Tags</h2>
+	<h2 class="mt-10 uppercase title-decoration">Contact</h2>
+	<section class="content">
+		<ul class="contact-list">
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+				</svg>
+				<a href="mailto:kfd_personal@163.com" target="_blank">kfd_personal@163.com</a>
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/>
+				</svg>
+				<a href="https://github.com/leon-kfd" target="_blank">Github</a>
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M12.344 17.963l-1.688 1.074-2.131-3.35c-.44 1.402-1.172 2.665-2.139 3.825-.402.483-.82.918-1.301 1.375-.155.147-.775.717-.878.82l-1.414-1.414c.139-.139.787-.735.915-.856.43-.408.795-.79 1.142-1.206 1.266-1.518 2.03-3.21 2.137-5.231H3v-2h4V7h-.868c-.689 1.266-1.558 2.222-2.618 2.857L2.486 8.143c1.395-.838 2.425-2.604 3.038-5.36l1.952.434c-.14.633-.303 1.227-.489 1.783H11.5v2H9v4h2.5v2H9.185l3.159 4.963zm3.838-.07L17.298 17H19V7h-4v10h.736l.446.893zM13 5h8v14h-3l-2.5 2-1-2H13V5z"/>
+				</svg>
+				<a href="https://www.zhihu.com/people/leon-d-92/posts" target="_blank">知乎</a>
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1322 1024">
+					<path d="M643.157333 247.637333h0.085334l154.88-123.178666-154.88-124.288L643.072 0l-154.624 124.202667 154.624 123.306666 0.085333 0.128z m0.085334 388.565334l0.085333-0.085334 399.573333-315.221333-108.373333-87.04-291.2 229.76-0.085333 0.085333-0.085334 0.085334-291.242666-229.76-108.245334 87.04 399.488 315.221333 0.085334-0.085333z m-0.170667 215.466666l0.170667-0.085333 534.954666-422.101333 108.373334 87.04-243.413334 192L643.242667 1024 10.410667 525.013333 0 516.778667l108.373333-87.04 534.698667 421.973333z"></path>
+				</svg>
+				<a href="https://juejin.cn/user/3843548381187335" target="_blank">掘金</a>
+			</li>
+		</ul>
+	</section>
+	<h2 class="mt-10 uppercase title-decoration">Tags</h2>
 	<section class="flex" style="flex-wrap: wrap">
 		{tagsList.map(tag => <a href={tag.url} class="mr-4 mb-4" target="_blank">{tag.name}</a>)}
 	</section>

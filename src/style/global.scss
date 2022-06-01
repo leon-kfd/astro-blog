@@ -1,3 +1,12 @@
+.prose {
+  --tc: rgba(126, 106, 18, 0.781);
+}
+[data-theme=winter] {
+  .prose {
+    --tc: rgba(247, 221, 134, 0.781);
+  }
+}
+
 #__imgZoomMask #__closeBtn {
   right: 20px !important;
 }
@@ -40,6 +49,32 @@
   .howdy-component {
     li > p {
       margin: 0;
+    }
+  }
+}
+
+.title-decoration {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.8em;
+    height: 40%;
+    background-color: var(--tc);
+    z-index: -1;
+  }
+}
+
+.contact-list {
+  svg {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block !important;
+    margin-right: 0.4em;
+    path {
+      fill: currentColor;
     }
   }
 }
