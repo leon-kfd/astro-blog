@@ -7,7 +7,7 @@ export async function getStaticPaths({ rss }) {
 	const markdownFiles = await Astro.glob('../content/**/*.md');
 	const posts = published( markdownFiles );
 	
-	rss(getRSS(markdownFiles));
+	// rss(getRSS(markdownFiles));
 
 	return posts.map((post) => {
 		return {

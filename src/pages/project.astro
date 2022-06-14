@@ -95,6 +95,36 @@ const dashboardLink = [
   }
 ]
 
+const coderLink = [
+  {
+    name: '⚡ Github',
+    link: 'https://github.com/leon-kfd/OnlineCodeEditor'
+  },
+  {
+    name: '📖 Article',
+    link: 'https://kongfandong.cn/blog/record-for-online-code-editor/'
+  },
+  {
+    name: '🌈 Live Demo',
+    link: 'https://s.kongfandong.cn'
+  }
+]
+
+const musicVisualizerLink = [
+  {
+    name: '⚡ Github',
+    link: 'https://github.com/leon-kfd/g-music-visualizer'
+  },
+  {
+    name: '📖 Article',
+    link: 'https://kongfandong.cn/blog/g-music-visualizer/'
+  },
+  {
+    name: '🌈 Live Demo',
+    link: 'https://leon-kfd.github.io/g-music-visualizer/'
+  }
+]
+
 ---
 
 <Page title="Project">
@@ -144,5 +174,40 @@ const dashboardLink = [
         }
       </ul>
     </details>
+  </section>
+
+  <h2 class="mt-10 uppercase title-decoration">Other</h2>
+  <section class="project-content">
+    <h3 style="margin-bottom: 0.4em">
+      <a class="project-title-link" href={`https://kongfandong.cn/coder/`} target="_blank" rel="noopener noreferrer">
+        💻 Code Editor - 在线代码IDE
+        <svg class="outlink-icon" viewBox="0 0 24 24">
+          <path d="M10 3v2H5v14h14v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6zm7.586 2H13V3h8v8h-2V6.414l-7 7L10.586 12l7-7z"></path>
+        </svg>
+      </a>
+    </h3>
+    <div class="outlink-wrapper">
+      {coderLink.map(item => <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>)}
+    </div>
+    <div class="description-wrapper">
+      基于Vue3实现的一个仿<code>CodePen</code>的在线代码IDE，响应式布局支持移动端，可拖拽更改页面布局。另支持<code>Sass</code>语法、<code>Emmet</code>快输、自动刷新等。
+    </div>
+  </section>
+
+  <section class="project-content">
+    <h3 style="margin-bottom: 0.4em">
+      <a class="project-title-link" href={`https://leon-kfd.github.io/g-music-visualizer/`} target="_blank" rel="noopener noreferrer">
+        🎵 Music Visualizer - 音乐可视化方案
+        <svg class="outlink-icon" viewBox="0 0 24 24">
+          <path d="M10 3v2H5v14h14v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6zm7.586 2H13V3h8v8h-2V6.414l-7 7L10.586 12l7-7z"></path>
+        </svg>
+      </a>
+    </h3>
+    <div class="outlink-wrapper">
+      {musicVisualizerLink.map(item => <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>)}
+    </div>
+    <div class="description-wrapper">
+      利用<code>G</code>渲染器与React制作的一个音乐可视化方案，基于AudioContext的decodeAudioDataAPI读取音频数据，可以随机获取一首歌曲体验多种可视化效果。
+    </div>
   </section>
 </Page>

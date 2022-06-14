@@ -1,10 +1,11 @@
+const base = import.meta.env.VITE_BASE
 export const nav = [
   {
     title: 'Project',
-    slug: '/project',
+    slug: `${base}/project`,
   },
   {
     title: 'About',
-    slug: '/about',
+    slug: `${base}/about`,
   }
 ]
