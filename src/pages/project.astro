@@ -125,12 +125,23 @@ const musicVisualizerLink = [
   }
 ]
 
+const scriptableLink = [
+  {
+    name: '⚡ Github',
+    link: 'https://github.com/leon-kfd/howdy-scriptable'
+  },
+  {
+    name: '📖 Document',
+    link: 'https://scriptable.deno.dev/'
+  }
+]
+
 ---
 
 <Page title="Project">
   <h2 class="mt-10 uppercase title-decoration">Latest</h2>
   <section class="project-content">
-    <h3 style="margin-bottom: 0.4em">
+    <h3 style="margin-bottom: 0.6em">
       <a class="project-title-link" href={`https://howdz.vercel.app`} target="_blank" rel="noopener noreferrer">
         Howdz 🔸 浏览器起始页
         <svg class="outlink-icon" viewBox="0 0 24 24">
@@ -147,7 +158,7 @@ const musicVisualizerLink = [
   </section>
 
   <section class="project-content">
-    <h3 style="margin-bottom: 0.4em">
+    <h3 style="margin-bottom: 0.6em">
       <a class="project-title-link" href={`https://kongfandong.cn/howdy/`} target="_blank" rel="noopener noreferrer">
         Howdyjs 🔸 插件库
         <svg class="outlink-icon" viewBox="0 0 24 24">
@@ -178,7 +189,7 @@ const musicVisualizerLink = [
 
   <h2 class="mt-10 uppercase title-decoration">Other</h2>
   <section class="project-content">
-    <h3 style="margin-bottom: 0.4em">
+    <h3 style="margin-bottom: 0.6em">
       <a class="project-title-link" href={`https://kongfandong.cn/coder/`} target="_blank" rel="noopener noreferrer">
         💻 Code Editor - 在线代码IDE
         <svg class="outlink-icon" viewBox="0 0 24 24">
@@ -195,7 +206,7 @@ const musicVisualizerLink = [
   </section>
 
   <section class="project-content">
-    <h3 style="margin-bottom: 0.4em">
+    <h3 style="margin-bottom: 0.6em">
       <a class="project-title-link" href={`https://leon-kfd.github.io/g-music-visualizer/`} target="_blank" rel="noopener noreferrer">
         🎵 Music Visualizer - 音乐可视化方案
         <svg class="outlink-icon" viewBox="0 0 24 24">
@@ -208,6 +219,23 @@ const musicVisualizerLink = [
     </div>
     <div class="description-wrapper">
       利用<code>G</code>渲染器与React制作的一个音乐可视化方案，基于AudioContext的decodeAudioDataAPI读取音频数据，可以随机获取一首歌曲体验多种可视化效果。
+    </div>
+  </section>
+
+  <section class="project-content">
+    <h3 style="margin-bottom: 0.6em">
+      <a class="project-title-link" href={`https://scriptable.deno.dev/`} target="_blank" rel="noopener noreferrer">
+        📱 Scriptable - IOS小组件
+        <svg class="outlink-icon" viewBox="0 0 24 24">
+          <path d="M10 3v2H5v14h14v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6zm7.586 2H13V3h8v8h-2V6.414l-7 7L10.586 12l7-7z"></path>
+        </svg>
+      </a>
+    </h3>
+    <div class="outlink-wrapper">
+      {scriptableLink.map(item => <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>)}
+    </div>
+    <div class="description-wrapper">
+      使用<code>Scriptable</code>编写IOS小组件，当前包含随机电影台词、随机古诗、随机英文句子、掘金热榜等脚本，以上脚本会同时包含随机背景图定时刷新展示。
     </div>
   </section>
 </Page>

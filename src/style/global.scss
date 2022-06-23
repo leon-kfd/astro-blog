@@ -34,15 +34,16 @@
   }
 }
 .outlink-wrapper {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.6em;
   font-size: 0.8em;
   & > a {
     text-decoration: none;
-    margin-right: 1em;
+    margin-right: 1.4em;
   }
 }
 
 .project-content {
+  margin-bottom: 4em;
   summary {
     cursor: pointer;
   }
