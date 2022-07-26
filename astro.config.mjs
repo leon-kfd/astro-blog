@@ -9,9 +9,18 @@ export default defineConfig({
 	integrations: [sitemap()],
 	markdown: {
 		remarkPlugins: [],
-		rehypePlugins: ['rehype-slug', 'remark-smartypants', 'remark-gfm', ['rehype-autolink-headings', {
-			behavior: 'wrap'
-		}], 'remark-gfm'],
+		rehypePlugins: [
+			'rehype-slug', 
+			'remark-smartypants', 
+			'remark-gfm', 
+			[
+				'rehype-autolink-headings', 
+				{
+					behavior: 'wrap'
+				}
+			], 
+			'remark-gfm'
+		],
 		shikiConfig: {
 			theme: 'rose-pine-moon',
 			langs: [],
