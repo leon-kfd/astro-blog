@@ -46,25 +46,6 @@ const howdyComponent = [
   return item
 })
 
-const howdzDashboard = [
-  {
-    title: '网页版 - View Online',
-    link: 'https://s.kongfandong.cn'
-  },
-  {
-    title: 'Chrome插件 - Install from store',
-    link: 'https://chrome.google.com/webstore/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/ggglfehkglgpenacfalffmiojghklamm/related'
-  },
-  {
-    title: 'Edge插件 - Install from store',
-    link: 'https://microsoftedge.microsoft.com/addons/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/cgcggcdgjfmeoemmdpleinicgepijegd'
-  },
-  {
-    title: '桌面应用 - Download install package',
-    link: 'https://github.com/leon-kfd/Dashboard/releases'
-  }
-]
-
 const howdyLink = [
   {
     name: '⚡ Github',
@@ -87,11 +68,11 @@ const dashboardLink = [
   },
   {
     name: '📖 Document',
-    link: 'https://kongfandong.cn/howdz/'
+    link: 'https://doc.howdz.xyz'
   },
   {
     name: '🌈 Live Demo',
-    link: 'https://s.kongfandong.cn'
+    link: 'https://howdz.xyz'
   }
 ]
 
@@ -134,6 +115,13 @@ const scriptableLink = [
     name: '📖 Document',
     link: 'https://scriptable.deno.dev/'
   }
+]
+
+const howdzImgLine = [
+  {
+    name: '📖 Document',
+    link: 'https://i.howdz.xyz'
+  },
 ]
 
 ---
@@ -188,6 +176,47 @@ const scriptableLink = [
   </section>
 
   <h2 class="mt-10 uppercase title-decoration">Other</h2>
+
+  <section class="project-content">
+    <h3 style="margin-bottom: 0.6em">
+      <a class="project-title-link" href={`https://i.howdz.xyz`} target="_blank" rel="noopener noreferrer">
+        🎲 Howdz Image Service - 图片服务
+        <svg class="outlink-icon" viewBox="0 0 24 24">
+          <path d="M10 3v2H5v14h14v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6zm7.586 2H13V3h8v8h-2V6.414l-7 7L10.586 12l7-7z"></path>
+        </svg>
+      </a>
+    </h3>
+    <div class="outlink-wrapper">
+      {howdzImgLine.map(item => <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>)}
+    </div>
+    <div class="description-wrapper">
+      基于<code>Vercel Edge function</code>实现的一个云函数图片服务，提供随机返回电影台词海报、随机古诗海报、生成二维码等图片服务，API可支持配置多个参数生成图片。
+    </div>
+    <details>
+      <summary>图片服务预览</summary>
+      <ul class="howdy-component">
+        <li>
+          <p>Movie Lines</p>
+          <a href="https://i.howdz.xyz" target="_blank">
+            <img src="https://i.howdz.xyz/api/movie?w=300&no-cache=1" loading="lazy" style="box-shadow: 0 25px 50px -12px rgba(0,0,0,.25)"/>
+          </a>
+        </li>
+        <li>
+          <p>Sentence</p>
+          <a href="https://i.howdz.xyz" target="_blank">
+            <img src="https://i.howdz.xyz/api/sentence?w=300&no-cache=1" loading="lazy" style="box-shadow: 0 25px 50px -12px rgba(0,0,0,.25)"/>
+          </a>
+        </li>
+        <li>
+          <p>QRCode</p>
+          <a href="https://i.howdz.xyz" target="_blank">
+            <img src="https://i.howdz.xyz/api/qrcode?data=https%253A%252F%252Fhowdz.xyz&w=256&auto-icon=1" loading="lazy" style="box-shadow: 0 25px 50px -12px rgba(0,0,0,.25)"/>
+          </a>
+        </li>
+      </ul>
+    </details>
+  </section>
+
   <section class="project-content">
     <h3 style="margin-bottom: 0.6em">
       <a class="project-title-link" href={`https://kongfandong.cn/coder/`} target="_blank" rel="noopener noreferrer">

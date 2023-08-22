@@ -7,6 +7,15 @@
   }
 }
 
+html:not([data-theme=winter]) {
+  .shadow-md {
+    --tw-shadow: 0 0 4px rgba(224, 224, 224, 0.4);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 0 8px rgba(224, 224, 224, 0.6);
+  }
+}
+
 #__imgZoomMask #__closeBtn {
   right: 20px !important;
 }
@@ -46,10 +55,13 @@
   margin-bottom: 4em;
   summary {
     cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 0.6em;
   }
   .howdy-component {
     li > p {
       margin: 0;
+      font-size: 0.8em;
     }
   }
 }

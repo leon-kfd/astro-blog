@@ -5,9 +5,56 @@ import Preview from "@components/blog/preview";
 
 const markdownFiles = await Astro.glob('../content/**/*.md')
 const posts = published( markdownFiles );
+
+const projects = [
+	{
+		name: 'Howdz Dashboard',
+		desc: '一个完全自定义配置的浏览器起始页',
+		img: 'https://cdn.kongfandong.cn/img/site-preview/Howdz.png',
+		link: 'https://doc.howdz.xyz',
+		// shields: 'https://img.shields.io/github/stars/leon-kfd/Dashboard'
+	},
+	{
+		name: 'Howdyjs',
+		desc: '包含一些原生JS插件、Vue组件、指令的工具库',
+		img: 'https://cdn.kongfandong.cn/img/site-preview/Howdyjs.png',
+		link: 'https://kongfandong.cn/howdy',
+	},
+	{
+		name: 'Image Service',
+		desc: '生成电影台词海报、随机古诗海报、二维码等图片服务API',
+		img: 'https://cdn.kongfandong.cn/img/site-preview/ImageService.png',
+		link: 'https://i.howdz.xyz'
+	},
+	{
+		name: 'Code Editor',
+		desc: '类似CodePen的在线代码IDE编辑器',
+		img: 'https://cdn.kongfandong.cn/img/site-preview/OnlineCodeEditor.png',
+		link: 'https://leon-kfd.github.io/OnlineCodeEditor/',
+	}
+]
 ---
 
 <Blog>
+	<div class="prose title-decoration uppercase">Project</div>
+	<div class="flex flex-wrap mt-4 gap-6">
+		{ 
+			projects.map((p) => {
+				return (
+					<a href={p.link} target="_blank" rel="noopener noreferrer" class="group flex items-center rounded-md bg-base-100 shadow-md h-24 w-full md:w-[22rem] md:h-32 overflow-hidden hover:shadow-lg">
+						<div class="w-24 h-24 md:w-32 md:h-32 bg-base-200 p-2">
+							<img src={p.img} alt="Site preview" referrerpolicy="no-referrer" class="w-full h-full object-cover rounded shadow-md transition-transform">
+						</div>
+						<div class="flex-1 px-4 py-2 md:py-4 h-full">
+							<div class="tracking-wide text-sm font-semibold text-lg">{p.name}</div>
+							<p class="mt-2 text-slate-500 text-sm">{p.desc}</p>
+						</div>
+					</a>
+				)
+			}) 
+		}
+	</div>
+	<div class="prose title-decoration mt-12 uppercase">Article</div>
 	<div>
 		{posts.map((p) => <Preview post={p} />)}
 	</div>
