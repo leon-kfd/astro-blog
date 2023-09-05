@@ -1,3 +1,13 @@
+body {
+  font-family: HarmonyOS_Regular, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "微软雅黑", sans-serif;
+}
+
+@supports(-webkit-touch-callout: none) {
+  body {
+    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, "微软雅黑", sans-serif;
+  }
+}
+
 .prose {
   --tc: rgba(126, 106, 18, 0.781);
 }

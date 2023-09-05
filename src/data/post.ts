@@ -11,7 +11,7 @@ export type Post = {
 	draft: boolean,
 	date: string,
 	file: URL,
-	img: URL,
+	img: string,
 	thumbImg: URL,
 }
 

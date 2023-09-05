@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" is:global>
 .to-top-button {
   position: fixed;
   right: 5vw;
@@ -7,10 +7,8 @@
   height: 36px;
   text-align: center;
   line-height: 36px;
-  background: #fff;
   z-index: 999;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   box-sizing: border-box;
   transition: transform 0.4s ease-in, opacity 0.4s ease-in;
@@ -19,17 +17,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgb(183, 197, 228);
+  background: #1b263d;
+  box-shadow: 0 0 25px rgba(255,255,255, 0.1), 0 5px 10px rgba(255,255,255, 0.04);
   &.active {
     opacity: 1;
     transform: translateY(0);
     transition: transform 0.4s ease-in, opacity 0.4s ease-in;
   }
 }
+[data-theme=winter] .to-top-button {
+  background: #fff;
+  color: #262626;
+  box-shadow: 0 0 25px rgba(0,0,0, 0.1), 0 5px 10px rgba(0,0,0, 0.04);
+}
 </style>
 
 <div class="to-top-button" title="Back To Top">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-    <path d="M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z" fill="#262626" />
+    <path d="M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z" fill="currentColor" />
   </svg>
 </div>
 

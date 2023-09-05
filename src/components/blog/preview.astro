@@ -11,7 +11,7 @@ const base = import.meta.env.VITE_BASE || ''
 				transition:name={`img-${post.slug}`} 
 				src={post.img} 
 				alt={post.title}
-				lazy="loading" 
+				loading="lazy" 
 				class="w-16 h-16 md:w-32 md:h-32 rounded bg-base-200 object-cover transition-none transform:none" />
 		</a>
 	}
