@@ -2,10 +2,8 @@
 title: 使用Taro-next将个人网盘功能扩展到微信小程序
 date: 2020-05-31
 desc: 使用Taro-next将vue代码转成微信小程序，将个人网盘功能在微信小程序中实现，使用了Vant-weapp的UI框架
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1461360228754-6e81c478b882?w=1280
+img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1461360228754-6e81c478b882?w=768
 thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1461360228754-6e81c478b882?w=240
-imgWidth: 800
-imgHeight: 500
 ---
 
 ## 前言

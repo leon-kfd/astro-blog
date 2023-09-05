@@ -1,4 +1,4 @@
-const base = import.meta.env.VITE_BASE
+const base = import.meta.env.VITE_BASE || ''
 export const nav = [
   {
     title: 'Project',

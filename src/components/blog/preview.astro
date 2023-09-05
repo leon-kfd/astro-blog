@@ -1,17 +1,22 @@
 ---
 import type { Post } from '@data/post';
 const post: Post = Astro.props.post
-const base = import.meta.env.VITE_BASE
+const base = import.meta.env.VITE_BASE || '' 
 ---
 
 <div class="py-6 flex flex-row-reverse gap-6 md:gap-10 items-start">
 	{post.img &&
 		<a href={`${base}/${post.slug}`} class="shrink-0">
-			<img src={post.thumbImg || post.img} alt={post.title} width="160" height="160" class="w-16 h-16 md:w-32 md:h-32 rounded bg-base-200 object-cover" />
+			<img 
+				transition:name={`img-${post.slug}`} 
+				src={post.img} 
+				alt={post.title}
+				lazy="loading" 
+				class="w-16 h-16 md:w-32 md:h-32 rounded bg-base-200 object-cover transition-none transform:none" />
 		</a>
 	}
 	<div class="flex flex-1 flex-col gap-4">
-		<h2 class="text-2xl font-bold">
+		<h2 transition:name={`title-${post.slug}`} class="text-2xl font-bold overflow-hidden">
 			<a class="hover:underline" href={`${base}/${post.slug}`}>{post.title}</a>
 		</h2>
 		<p class="text-sm md:text-base text-base-content/70">{post.desc}</p>

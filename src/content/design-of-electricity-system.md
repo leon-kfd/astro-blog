@@ -2,7 +2,7 @@
 title: 简易电商系统开发记录(Nuxtjs+Koa)
 date: 2019-01-30
 desc: 使用Nuxtjs + Koa + Mysql实现的电商系统，功能未完全开发完，编写该文档记录之前开发遇到部分问题与系统设计总结
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1460925895917-afdab827c52f?w=1280&h=600
+img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1460925895917-afdab827c52f?w=768&h=600
 thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1460925895917-afdab827c52f?w=240
 ---
 

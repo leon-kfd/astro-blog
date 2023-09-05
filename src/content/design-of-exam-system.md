@@ -2,7 +2,7 @@
 title: 考试系统设计总结
 date: 2018-12-01
 desc: 采用Vue + Laravel + Mysql 架构开发的在线考试系统，包含学生端与教师管理端功能
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1580582932707-520aed937b7b?w=1280
+img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1580582932707-520aed937b7b?w=768
 thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1580582932707-520aed937b7b?w=240
 ---
 

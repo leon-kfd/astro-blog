@@ -1,44 +1,127 @@
 ---
 import "../../style/tailwind.css";
 import "../../style/global.scss";
+import { ViewTransitions } from "astro:transitions";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import ThemeChange from "@components/ThemeChange";
-import Head from '@components/Head';
-import ToTop from '@components/ToTop';
-const {title} = Astro.props;
-const {desc} = Astro.props;
-const {img} = Astro.props;
+import Head from "@components/Head";
+import ToTopBtn from "@components/ToTop";
+const { title } = Astro.props;
+const { desc } = Astro.props;
+const { img } = Astro.props;
 ---
-<html>
-<Head
-	title={title}
-	desc={desc}
-	img={img}
->
-	<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-	<link rel="preconnect" href="https://s1.hdslb.com/" />
-	<link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" media="all" />
-	<link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css" media="all" />
-</Head>
-<body class="flex flex-col items-center h-screen h-[100svh]">
-	<div class="w-full max-w-3xl flex-grow">
-		<Navbar>
-			<ThemeChange />
-		</Navbar>
-		<div class="p-4 pb-10 pt-2 blog-markdown-wrapper">
-			<slot />
-		</div>
-	</div>
-	<ToTop />
-	<Footer />
-</body>
-</html>
 
-<style lang="scss" is:global>
-.blog-markdown-wrapper {
-	img {
-		max-width: 100%;
-	}
-}
-</style>
+<html transition:animate="none">
+	<Head title={title} desc={desc} img={img}>
+		<!-- <script src="https://cdn.kongfandong.cn/packages/theme-change/index.js"></script> -->
+		<link rel="preconnect" href="https://s1.hdslb.com/" />
+		<link
+			rel="stylesheet"
+			href="//s1.hdslb.com/bfs/static/jinkela/long/font/regular.css"
+			media="all"
+		/>
+		<link
+			rel="stylesheet"
+			href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
+			media="all"
+		/>
+		<ViewTransitions />
+	</Head>
+	<body class="flex flex-col items-center h-screen h-[100svh]">
+		<div class="w-full max-w-3xl flex-grow">
+			<Navbar>
+				<ThemeChange />
+			</Navbar>
+			<div class="p-4 pb-10 pt-2 blog-markdown-wrapper">
+				<slot />
+			</div>
+		</div>
+		<ToTopBtn />
+		<Footer />
+	</body>
+	<script is:inline>
+		document.addEventListener('astro:after-swap', () => {
+			var toggleEl = document.querySelector("[data-toggle-theme]");
+			(function (theme = localStorage.getItem("theme")) {
+				if (localStorage.getItem("theme")) {
+					document.documentElement.setAttribute("data-theme", theme);
+					if (toggleEl) {
+						[...document.querySelectorAll("[data-toggle-theme]")].forEach(
+							(el) => {
+								el.classList.add(toggleEl.getAttribute("data-act-class"));
+							},
+						);
+					}
+				}
+			})();
+		});
+		if (!window.themeChange) {
+			function themeToggle() {
+				var toggleEl = document.querySelector("[data-toggle-theme]");
+				(function (theme = localStorage.getItem("theme")) {
+					if (localStorage.getItem("theme")) {
+						document.documentElement.setAttribute("data-theme", theme);
+						if (toggleEl) {
+							[...document.querySelectorAll("[data-toggle-theme]")].forEach(
+								(el) => {
+									el.classList.add(toggleEl.getAttribute("data-act-class"));
+								},
+							);
+						}
+					}
+				})();
+				if (toggleEl) {
+					[...document.querySelectorAll("[data-toggle-theme]")].forEach(
+						(el) => {
+							el.addEventListener("click", function () {
+								var themesList = el.getAttribute("data-toggle-theme");
+								if (themesList) {
+									var themesArray = themesList.split(",");
+									if (
+										document.documentElement.getAttribute("data-theme") ==
+										themesArray[0]
+									) {
+										if (themesArray.length == 1) {
+											document.documentElement.removeAttribute("data-theme");
+											localStorage.removeItem("theme");
+										} else {
+											document.documentElement.setAttribute(
+												"data-theme",
+												themesArray[1],
+											);
+											localStorage.setItem("theme", themesArray[1]);
+										}
+									} else {
+										document.documentElement.setAttribute(
+											"data-theme",
+											themesArray[0],
+										);
+										localStorage.setItem("theme", themesArray[0]);
+									}
+								}
+								[...document.querySelectorAll("[data-toggle-theme]")].forEach(
+									(el) => {
+										el.classList.toggle(this.getAttribute("data-act-class"));
+									},
+								);
+							});
+						},
+					);
+				}
+			}
+			window.themeChange = function () {
+				themeToggle();
+			};
+		}
+		window.themeChange();
+	</script>
+
+	<style lang="scss" is:global>
+		.blog-markdown-wrapper {
+			img {
+				max-width: 100%;
+			}
+		}
+	</style>
+</html>

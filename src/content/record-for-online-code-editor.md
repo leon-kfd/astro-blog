@@ -2,7 +2,7 @@
 title: 开发Online Code Editor过程的一些记录
 date: 2021-03-20
 desc: OnlineCodeEditor是笔者基于Vue3 + Typescript开发的一个类似Codepen的练手开源项目，本文记录一些项目中使用到技术及实现原理等。
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1587620962725-abab7fe55159?w=1280
+img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1587620962725-abab7fe55159?w=768
 thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1587620962725-abab7fe55159?w=240
 ---
 

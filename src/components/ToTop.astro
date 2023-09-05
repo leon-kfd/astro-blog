@@ -1,5 +1,5 @@
 <style lang="scss">
-.to-top {
+.to-top-button {
   position: fixed;
   right: 5vw;
   bottom: 2rem;
@@ -27,24 +27,29 @@
 }
 </style>
 
-<div class="to-top" title="Back To Top">
+<div class="to-top-button" title="Back To Top">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
     <path d="M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z" fill="#262626" />
   </svg>
 </div>
 
 <script is:inline>
-const toTop = document.querySelector('.to-top');
-const setToTopState = () => {
-  if (window.scrollY > 100) {
-    toTop.classList.add('active');
-  } else {
-    toTop.classList.remove('active');
+if (!window.initToTop) {
+  window.initToTop = () => {
+    const toTopBtn = document.querySelector('.to-top-button');
+    const setToTopState = () => {
+      if (window.scrollY > 100) {
+        toTopBtn.classList.add('active');
+      } else {
+        toTopBtn.classList.remove('active');
+      }
+    }
+    setToTopState();
+    window.addEventListener('scroll', setToTopState);
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
   }
 }
-setToTopState();
-window.addEventListener('scroll', setToTopState);
-toTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-})
+window.initToTop()
 </script>

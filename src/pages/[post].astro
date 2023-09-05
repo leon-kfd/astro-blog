@@ -23,16 +23,12 @@ const { post: { Content }, post } = Astro.props;
 <Blog title={post.title} desc={post.desc} img={post.img ? post.img : null}>
 	<div class="flex justify-center">
 		<div class="py-2 prose lg:py-6 lg:prose-lg w-full">
-			{post.img && post.imgWidth && post.imgHeight ?
+			{ post.img &&
 				<figure class="flex justify-center">
-					<img src={post.img} alt={post.title} width={post.imgWidth} height={post.imgHeight} class="rounded bg-base-200" />
-				</figure>
-				: post.img &&
-				<figure class="flex justify-center">
-					<img src={post.img} alt={post.title} class="rounded bg-base-200" />
+					<img transition:name={`img-${post.slug}`} src={post.img} alt={post.title} class="rounded bg-base-200" />
 				</figure>
 			}
-			<h1>{post.title}</h1>
+			<h2 transition:name={`title-${post.slug}`} class="text-2xl font-bold">{post.title}</h2>
 			<div class="flex gap-3">
 				<span class="badge badge-ghost">
 					<Date date={post.date}/>
