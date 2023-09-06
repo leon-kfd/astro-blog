@@ -15,7 +15,7 @@ const base = import.meta.env.VITE_BASE || ''
     <ul class="menu menu-horizontal p-0 hidden md:flex">
       {nav.map(item => (
       <li>
-        <a href={item.slug}>{item.title}</a>
+        <a class="rounded-md" href={item.slug}>{item.title}</a>
       </li>
       ))}
     </ul>
