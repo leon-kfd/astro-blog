@@ -1,5 +1,5 @@
 ---
-import Page from "@layouts/page";
+import Blog from "@layouts/blog";
 const weightMap = {
 	Vue: {
 		weight: 9,
@@ -83,7 +83,7 @@ const tagsList = Object.keys(weightMap).map(key => {
 }).sort((a, b) => b.weight - a.weight)
 ---
 
-<Page title="About me">
+<Blog title="About me" isPage>
 	<h2 class="mt-10 uppercase title-decoration">Base</h2>
 	<section class="content">
 		<ul class="base-list">
@@ -126,4 +126,4 @@ const tagsList = Object.keys(weightMap).map(key => {
 	<section class="flex" style="flex-wrap: wrap">
 		{tagsList.map(tag => <a href={tag.url} class="mr-4 mb-4" target="_blank">{tag.name}</a>)}
 	</section>
-</Page>
+</Blog>

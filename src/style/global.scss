@@ -84,11 +84,29 @@ html:not([data-theme=winter]) {
   }
 }
 
+.base-list,
 .contact-list {
+  li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    white-space: pre-wrap;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      left: -16px;
+      background: var(--tw-prose-bullets);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  
   svg {
     width: 1.2em;
     height: 1.2em;
-    display: inline-block !important;
     margin-right: 0.4em;
     path {
       fill: currentColor;

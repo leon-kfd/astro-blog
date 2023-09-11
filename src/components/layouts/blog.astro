@@ -5,11 +5,13 @@ import { ViewTransitions } from "astro:transitions";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import ThemeChange from "@components/ThemeChange";
+import Github from "@components/Github";
 import Head from "@components/Head";
 import ToTopBtn from "@components/ToTop";
 const { title } = Astro.props;
 const { desc } = Astro.props;
 const { img } = Astro.props;
+const { isPage } = Astro.props;
 ---
 
 <html>
@@ -25,11 +27,20 @@ const { img } = Astro.props;
 	<body class="flex flex-col items-center h-screen h-[100svh]">
 		<div class="w-full max-w-3xl flex-grow">
 			<Navbar>
+				<Github />
 				<ThemeChange />
 			</Navbar>
-			<div class="p-4 pb-10 pt-2 blog-markdown-wrapper">
-				<slot />
-			</div>
+			{ 
+				isPage
+				? 
+					<div class="p-4 pb-10 pt-2 prose lg:prose-lg">
+						<slot />
+					</div>
+				: 
+					<div class="p-4 pb-10 pt-2 blog-markdown-wrapper">
+						<slot />
+					</div> 
+			}
 		</div>
 		<ToTopBtn />
 		<Footer />
