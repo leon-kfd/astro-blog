@@ -28,7 +28,7 @@ const { post: { Content }, post } = Astro.props;
 					<img transition:name={`img-${post.slug}`} src={post.img} alt={post.title} class="rounded bg-base-200" />
 				</figure>
 			}
-			<h2 transition:name={`title-${post.slug}`} class="text-2xl font-bold">{post.title}</h2>
+			<h2 transition:name={`title-${post.slug}`} class="text-2xl">{post.title}</h2>
 			<div class="flex gap-3">
 				<span class="badge badge-ghost">
 					<Date date={post.date}/>
