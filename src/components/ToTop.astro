@@ -41,6 +41,7 @@
 <script is:inline>
 if (!window.initToTop) {
   window.initToTop = () => {
+    console.log('initTop')
     const toTopBtn = document.querySelector('.to-top-button');
     const setToTopState = () => {
       if (window.scrollY > 100) {
@@ -57,4 +58,7 @@ if (!window.initToTop) {
   }
 }
 window.initToTop()
+document.addEventListener('astro:after-swap', () => {
+  window.initToTop()
+})
 </script>
