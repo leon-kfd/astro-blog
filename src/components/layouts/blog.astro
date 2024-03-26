@@ -46,23 +46,8 @@ const { isPage } = Astro.props;
 		<Footer />
 	</body>
 	<script is:inline>
-		document.addEventListener('astro:after-swap', () => {
-			var toggleEl = document.querySelector("[data-toggle-theme]");
-			(function (theme = localStorage.getItem("theme")) {
-				if (localStorage.getItem("theme")) {
-					document.documentElement.setAttribute("data-theme", theme);
-					if (toggleEl) {
-						[...document.querySelectorAll("[data-toggle-theme]")].forEach(
-							(el) => {
-								el.classList.add(toggleEl.getAttribute("data-act-class"));
-							},
-						);
-					}
-				}
-			})();
-		});
 		if (!window.themeChange) {
-			function themeToggle() {
+			window.themeChange = () => {
 				var toggleEl = document.querySelector("[data-toggle-theme]");
 				(function (theme = localStorage.getItem("theme")) {
 					if (localStorage.getItem("theme")) {
@@ -115,11 +100,11 @@ const { isPage } = Astro.props;
 					);
 				}
 			}
-			window.themeChange = function () {
-				themeToggle();
-			};
 		}
 		window.themeChange();
+		document.addEventListener('astro:after-swap', () => {
+			window.themeChange();
+		});
 	</script>
 
 	<style lang="scss" is:global>
