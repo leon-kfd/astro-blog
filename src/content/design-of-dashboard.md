@@ -2,8 +2,8 @@
 title: Dashboard自定义面板项目介绍
 date: 2021-05-29
 desc: 基于Vite、Vue3、Typescript开发的个性化的浏览器导航首页面板，支持自定义添加组件，可编辑组件各种属性。响应式设计，可自定义随机壁纸背景图或动态壁纸。
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1543286386-713bdd548da4?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1543286386-713bdd548da4?w=240
+img: https://images.unsplash.com/photo-1543286386-713bdd548da4?w=768
+thumbImg: https://images.unsplash.com/photo-1543286386-713bdd548da4?w=240
 ---
 
 ## 项目介绍

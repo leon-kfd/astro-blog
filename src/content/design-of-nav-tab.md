@@ -2,8 +2,8 @@
 title: 浏览器导航首页设计
 date: 2020-04-04
 desc: 一个浏览器首页站点, 包含可切换的常用搜索引擎搜索功能, 键盘布局添加快捷收藏网站, 并加入键盘按键监听可快速打开, 自定义背景图, 配置同步功能等功能
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1504292004442-f285299403fa?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1504292004442-f285299403fa?w=240
+img: https://images.unsplash.com/photo-1504292004442-f285299403fa?w=768
+thumbImg: https://images.unsplash.com/photo-1504292004442-f285299403fa?w=240
 ---
 
 > 2021/11/01 更新: 以下内容为旧版网站的记录，站点地址已更新为 Howdz 起始页项目地址

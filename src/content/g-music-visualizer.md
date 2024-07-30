@@ -2,8 +2,8 @@
 title: 利用G渲染器实现的音频可视化方案
 date: 2021-06-29
 desc: 利用阿里Antvis出品的G底层图形渲染器，结合AudioContext提供的音频数据获取API，实现出类似网易云播放音频特效。
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1505740420928-5e560c06d30e?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1505740420928-5e560c06d30e?w=240
+img: https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=768
+thumbImg: https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=240
 ---
 
 利用阿里 Antvis 出品的 G 底层图形渲染器，结合 AudioContext 提供的音频数据获取 API，实现出类似网易云播放音频特效。

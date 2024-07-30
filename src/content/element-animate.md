@@ -2,8 +2,8 @@
 title: 使用Element.animate添加文字与图片动画
 date: 2021-12-01
 desc: 在网页添加一些简单的切换动画一般使用CSS3的animate或者transition实现，而Element.animate是新的原生Javascript Api，能使用JS快速为Dom添加动画。
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1622737133809-d95047b9e673?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1622737133809-d95047b9e673?w=240
+img: https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=768
+thumbImg: https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=240
 ---
 
 在网页添加一些简单的切换动画一般使用 CSS3 的 animation 或者 transition 实现，而 Element.animate 是新的原生 Javascript Api，能使用 JS 快速为 Dom 添加动画。

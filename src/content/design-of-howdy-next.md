@@ -2,8 +2,8 @@
 title: Howdyjs组件库迁移Vue3设计与总结
 date: 2021-01-30
 desc: 将个人组件库Howdyjs使用Vue + Typescript进行重构，使用Vite构建开发站点，Rollup进行组件打包并分包发布NPM
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1516031190212-da133013de50?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1516031190212-da133013de50?w=240
+img: https://images.unsplash.com/photo-1516031190212-da133013de50?w=768
+thumbImg: https://images.unsplash.com/photo-1516031190212-da133013de50?w=240
 ---
 
 将个人组件库 Howdyjs 使用 Vue + Typescript 进行重构，使用 Vite 构建开发站点，Rollup 进行组件打包并分包发布 NPM。

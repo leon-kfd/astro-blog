@@ -2,8 +2,8 @@
 title: 个人组件库展示站点搭建总结
 date: 2020-05-01
 desc: 打包前自动将Example的Vue文件转为Markdown，自动生成对应展示页面。使用Markdown-loader将README.md文件和代码Markdown文件直接转成Html代码，并使用HighlightJs高亮展示代码
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1564865878688-9a244444042a?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1564865878688-9a244444042a?w=240
+img: https://images.unsplash.com/photo-1564865878688-9a244444042a?w=768
+thumbImg: https://images.unsplash.com/photo-1564865878688-9a244444042a?w=240
 ---
 
 在线预览个人组件库: **<a href="https://kongfandong.cn/howdy" target="_blank">Howdy</a>**

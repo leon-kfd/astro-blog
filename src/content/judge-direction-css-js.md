@@ -2,8 +2,8 @@
 title: CSS实现判断鼠标进入方向
 date: 2020-03-21
 desc: 使用纯CSS判断鼠标进入方向执行不一样的方向动画，与搭配JS实现同时记录进入方向与移出方向。
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1542906453-02e875f65428?w=1200
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1542906453-02e875f65428?w=240
+img: https://images.unsplash.com/photo-1542906453-02e875f65428?w=1200
+thumbImg: https://images.unsplash.com/photo-1542906453-02e875f65428?w=240
 ---
 
 使用纯 CSS 判断鼠标进入方向执行不一样的方向动画，或搭配 JS 实现同时记录进入方向与移出方向

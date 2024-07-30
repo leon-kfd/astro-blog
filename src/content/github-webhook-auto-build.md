@@ -2,8 +2,8 @@
 title: Github Webhooks与Koa2实现简单的前端自动化部署
 date: 2020-04-12
 desc: Git仓库配置了Github Webhooks后，在进行Push等事件时，Github会向设定的服务器发送请求，通过监听该请求，然后执行相关脚本文件从而实现简单的自动化构建与部署（服务端使用Koa2接收请求与处理脚本）
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647166545674-ce28ce93bdca?w=768
-thumb: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647166545674-ce28ce93bdca?w=240
+img: https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?w=768
+thumb: https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?w=240
 ---
 
 ## 前言

@@ -2,8 +2,8 @@
 title: 使用D3.js将离散的点形成平滑曲线及其应用
 date: 2020-08-16
 desc: D3.js内置了几种可以将离散点连成线的算法，但官方并没有提供效果展示，于是编写了一个简单的可以快速看到各种连线算法的效果图的DEMO。同时利用该功能实现的一个简单的曲线自动校正的Canvas画板Demo。
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1636306950045-4dbb10b7e0f4?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1636306950045-4dbb10b7e0f4?w=240
+img: https://images.unsplash.com/photo-1636306950045-4dbb10b7e0f4?w=768
+thumbImg: https://images.unsplash.com/photo-1636306950045-4dbb10b7e0f4?w=240
 ---
 
 ## 前言

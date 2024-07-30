@@ -2,8 +2,8 @@
 title: Howdz起始页开发记录
 date: 2021-11-21
 desc: Howdz是基于Vue3开发的一个完全自定义配置的浏览器导航起始页，支持按需添加物料组件，可自由编辑组件的位置、大小与功能。支持响应式设计，可自定义随机壁纸、动态壁纸等。项目提供网页在线访问、打包出浏览器插件、打包出桌面应用(Electron)等访问方式。
-img: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1503437313881-503a91226402?w=768
-thumbImg: https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1503437313881-503a91226402?w=240
+img: https://images.unsplash.com/photo-1503437313881-503a91226402?w=768
+thumbImg: https://images.unsplash.com/photo-1503437313881-503a91226402?w=240
 ---
 
 ## 前言
