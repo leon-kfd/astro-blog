@@ -8,7 +8,7 @@ thumbImg: https://images.unsplash.com/photo-1503437313881-503a91226402?w=240
 
 ## 前言
 
-[Howdz](https://kongfandong.cn/howdz/)是基于`Vue3` + `Typescript`开发的一个完全自定义配置的浏览器导航起始页，支持按需添加物料组件，可自由编辑组件的位置、大小与功能。支持响应式设计，可自定义随机壁纸、动态壁纸等。项目提供[网页在线访问](https://s.kongfandong.cn)、打包出[浏览器插件](https://microsoftedge.microsoft.com/addons/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/cgcggcdgjfmeoemmdpleinicgepijegd)、打包出[桌面应用(Electron)](https://github.com/leon-kfd/Dashboard/releases)等访问方式。
+[Howdz](https://doc.howdz.xyz)是基于`Vue3` + `Typescript`开发的一个完全自定义配置的浏览器导航起始页，支持按需添加物料组件，可自由编辑组件的位置、大小与功能。支持响应式设计，可自定义随机壁纸、动态壁纸等。项目提供[网页在线访问](https://howdz.xyz)、打包出[浏览器插件](https://microsoftedge.microsoft.com/addons/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/cgcggcdgjfmeoemmdpleinicgepijegd)、打包出[桌面应用(Electron)](https://github.com/leon-kfd/Dashboard/releases)等访问方式。
 
 本文记录项目开发中使用的相关技术。
 
@@ -319,6 +319,6 @@ export function getPopoverActivePointByDirection(
 
 ### 相关链接
 
-- [Howdz 介绍文档](https://kongfandong.cn/howdz/)
+- [Howdz 介绍文档](https://doc.howdz.xyz)
 - [Github](https://github.com/leon-kfd/Dashboard/)
-- [在线网页版地址](https://s.kongfandong.cn)
+- [在线网页版地址](https://howdz.xyz)
