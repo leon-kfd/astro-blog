@@ -100,7 +100,7 @@ export default {
 };
 ```
 
-![JSX生成的表单](https://s2.loli.net/2021/12/04/OboPiN3ZfDayq9s.png)
+![JSX生成的表单](https://cdn.kongfandong.cn/img/blog/OboPiN3ZfDayq9s.png)
 
 ## 右键菜单
 
@@ -128,7 +128,7 @@ export default {
 </script>
 ```
 
-![右键菜单](https://s2.loli.net/2021/12/04/fYIsvFn7xXAZOac.gif)
+![右键菜单](https://cdn.kongfandong.cn/img/blog/fYIsvFn7xXAZOac.gif)
 
 ## 物料组件布局
 
@@ -172,7 +172,7 @@ export default {
 
 使用`v-model:layout`双向绑定栅格模式物料组件列表数据，因为物料数组存在 vuex 中，这里用`computed`的 setter 进行更新。`isLock`是用于判断当前是否处于编辑模式，在锁定状态下禁用拖拽与大小更改。当前使用的栅格数为 12，即将屏幕宽度分割为 12 份。
 
-![栅格模式](https://s2.loli.net/2021/12/04/OIGFoR6zrCN8cE1.gif)
+![栅格模式](https://cdn.kongfandong.cn/img/blog/OIGFoR6zrCN8cE1.gif)
 
 ### Fixed 模式
 
@@ -217,7 +217,7 @@ Fixed 模式使用笔者自己开源的[@howdjs/to-control](https://kongfandong.
 
 与栅格模式不同，这里是使用事件回调函数对组件的 Vuex 数据进行更新。也是使用`isLock`判断组件是否锁定。插件支持更改定位方向，记录在右上角、右下角等，这样对响应式布局很有效。更多用法可参考: [@howdjs/to-control](https://kongfandong.cn/howdy/to-control/example3)
 
-![Fixed模式](https://s2.loli.net/2021/12/04/7hEy1qkxtocZwRg.gif)
+![Fixed模式](https://cdn.kongfandong.cn/img/blog/7hEy1qkxtocZwRg.gif)
 
 ## 交互弹窗 Popover
 
@@ -293,7 +293,7 @@ export function getPopoverActivePointByDirection(
 
 另外，使用`transform-origin`这个属性可以实现弹窗从点击元素过渡展开的动画。最后配置弹窗的方向与弹出的组件类型即可。代码参考：[ActionPopover.vue](https://github.com/leon-kfd/Dashboard/blob/main/src/components/Action/ActionPopover.vue)
 
-![不同方向的Popover](https://s2.loli.net/2021/12/04/zFgUIwukiKxc5Xh.gif)
+![不同方向的Popover](https://cdn.kongfandong.cn/img/blog/zFgUIwukiKxc5Xh.gif)
 
 ## 获取任意网站 Favicon
 

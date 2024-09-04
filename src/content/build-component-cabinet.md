@@ -93,7 +93,7 @@ module.exports = {
 
 然后为渲染后的页面设定主题 CSS，可以直接在网上找现成 CSS 代码，例如可 Markdown 编辑器 **<a href="http://theme.typora.io/" target="_blank">Typora</a>** 的主题。
 
-![README渲染页面](https://s2.loli.net/2022/04/27/IwiOoupN34CKAgM.png)
+![README渲染页面](https://cdn.kongfandong.cn/img/blog/IwiOoupN34CKAgM.png)
 
 ## 将 Vue 文件转为 Markdown
 
@@ -266,6 +266,6 @@ app.use(static(__dirname + "/public"));
 
 3. 若是使用 nginx 搭建的静态资源服务器，可以参考官方推荐的 **<a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#nginx" target="_blank">Nginx 配置</a>** 实现 History 模式。
 
-![左侧导航中间Demo右侧代码](https://s2.loli.net/2021/12/04/mCQ9NYu7McxLXHl.png)
+![左侧导航中间Demo右侧代码](https://cdn.kongfandong.cn/img/blog/mCQ9NYu7McxLXHl.png)
 
 在线预览个人组件库: **<a href="https://kongfandong.cn/howdy" target="_blank">Howdy</a>**

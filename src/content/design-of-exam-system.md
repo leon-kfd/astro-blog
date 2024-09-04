@@ -31,11 +31,11 @@ thumbImg: https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=240
 
 系统分为学生系统与教师系统，教师用户在登录页登录后自动跳转到教师系统首页，然后教师可以进行创建考试，创建的过程中可以对考试进行临时保存。把题目与考试班级等考试信息填写完毕后可以进行发布考试。这时学生用户登录到学生系统后，学生主页将会显示自己需要进行的考试列表或自己已经完成的考试列表。学生点击进入考试则可进行考试，在规定时间内完成考试后进行交卷。提交试卷后，将会弹出自动阅卷结果，学生可以进入查看自己的答卷与分数。与此同时，教师系统可获取到学生完成考试的列表，教师可以查看学生的成绩与答卷，并对需要进行阅卷的考试进行阅卷。教师系统提供一个公共功能，教师可以发布、编辑、删除公告，发布的公告将展示在学生系统上。
 
-![系统功能架构图](https://s2.loli.net/2021/12/04/HTLEn4zjxKXiPs5.png)
+![系统功能架构图](https://cdn.kongfandong.cn/img/blog/HTLEn4zjxKXiPs5.png)
 
 **系统技术架构**
 
-![系统技术架构图](https://s2.loli.net/2021/12/04/z2ZQrXeiCMPuGxt.png)
+![系统技术架构图](https://cdn.kongfandong.cn/img/blog/z2ZQrXeiCMPuGxt.png)
 
 ### 技术选型
 
@@ -303,22 +303,22 @@ class Response extends Model
 ### 前端界面截图
 
 **登录界面**
-![登录界面](https://s2.loli.net/2021/12/04/fMzSWQCV9YstbXg.jpg)
+![登录界面](https://cdn.kongfandong.cn/img/blog/fMzSWQCV9YstbXg.jpg)
 
 **创建考试**
-![创建考试](https://s2.loli.net/2021/12/04/l58hipzMxXe7BRf.png)
+![创建考试](https://cdn.kongfandong.cn/img/blog/l58hipzMxXe7BRf.png)
 
 **成绩管理**
-![成绩管理](https://s2.loli.net/2021/12/04/POgNKjoARZ8uyE2.png)
+![成绩管理](https://cdn.kongfandong.cn/img/blog/POgNKjoARZ8uyE2.png)
 
 **考试管理**
-![考试管理](https://s2.loli.net/2021/12/04/STQC3lk1fWurIxa.png)
+![考试管理](https://cdn.kongfandong.cn/img/blog/STQC3lk1fWurIxa.png)
 
 **考试**
-![考试](https://s2.loli.net/2021/12/04/Rn6Ux3F2HMf1mO7.png)
+![考试](https://cdn.kongfandong.cn/img/blog/Rn6Ux3F2HMf1mO7.png)
 
 **考试结果**
-![考试结果](https://s2.loli.net/2021/12/04/rEqdBh2INZWJ4Fz.png)
+![考试结果](https://cdn.kongfandong.cn/img/blog/rEqdBh2INZWJ4Fz.png)
 
 由于时间仓促，本次开发的系统虽然基本功能已经完成，但仍有很大的提升空间。
 

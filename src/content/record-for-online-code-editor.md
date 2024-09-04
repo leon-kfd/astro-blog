@@ -199,7 +199,7 @@ module.exports = {
 
 实现响应式设计一般采用 CSS3 的媒体查询实现，但由于布局问题，手机端下不适用拉伸布局，需要额外添加一个手机端下的标签页，所以这次需要使用 js 辅助实现。
 
-![响应式](https://s2.loli.net/2021/12/04/jFqzUH3udXWkM2i.gif)
+![响应式](https://cdn.kongfandong.cn/img/blog/jFqzUH3udXWkM2i.gif)
 
 ## 利用 Github Workflows 实现自动构建
 

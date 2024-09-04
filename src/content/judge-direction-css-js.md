@@ -24,7 +24,7 @@ thumbImg: https://images.unsplash.com/photo-1542906453-02e875f65428?w=240
 
 实现纯 CSS 判断鼠标进入方向，主要是先通过将 DIV 以对角线切割为 4 个部分，然后即可为这 4 个部分写入:hover 选择器执行不同方向的动画。如果 DIV 是正方形的话，对角线切割就很简单，可以用伪元素通过 rotate(45deg)就可以实现。但是当 Div 是长方形的时候，就需要使用以下的方法了。
 
-![对角线切割DIV](https://s2.loli.net/2021/12/04/Afdp2u1U4S6oVWL.png)
+![对角线切割DIV](https://cdn.kongfandong.cn/img/blog/Afdp2u1U4S6oVWL.png)
 
 目前可以通过 2 种 CSS3 的方式实现
 
@@ -153,7 +153,7 @@ HTML
 
 transform 实现方式与 clip-path 方式基本差不多，主要是先将伪类通过旋转加偏移变换成一个平行四边形，将变换顶点定位在中心，然后隐藏超出部分即可。
 
-![transform变换DIV](https://s2.loli.net/2021/12/04/TEaZcDmVvYo2pzB.png)
+![transform变换DIV](https://cdn.kongfandong.cn/img/blog/TEaZcDmVvYo2pzB.png)
 
 **transform 方式实现主要代码逻辑** _(仅列举与 clip-path 不一样的代码)_
 
@@ -220,7 +220,7 @@ transform 方式最大缺点就是需要计算角度，先将变换顶点改为 
 
 JS 实现判断进入方向，依然是将 div 按对角线切割成 4 个三角形，然后通过判断鼠标事件中移入的点是否在三角形内来确定方向。这里涉及到了一个如何判断点在区域内的算法实现。
 
-![判断点是否在同侧](https://s2.loli.net/2021/12/04/hf1sQ2w8DOHloGy.png)
+![判断点是否在同侧](https://cdn.kongfandong.cn/img/blog/hf1sQ2w8DOHloGy.png)
 
 以下提供一个函数判断点 P 和点 O 是否在直线 AB 的同一侧
 
@@ -245,7 +245,7 @@ function isSameSide(p, o, a, b) {
 
 ### 移入方向判断
 
-![移入方向](https://s2.loli.net/2021/12/04/v2qT7iGQoLmBXwW.png)
+![移入方向](https://cdn.kongfandong.cn/img/blog/v2qT7iGQoLmBXwW.png)
 
 如图，点 P 为鼠标事件移入获取到的点，当点 P 与点 O 在直线 AB 同一侧、点 P 与点 A 在直线 OB 同一侧、点 P 与点 B 在直线 AO 同一侧，即可判断出点 P 在三角形 AOB 内，即鼠标从上方进入。转换为代码即可写成:
 

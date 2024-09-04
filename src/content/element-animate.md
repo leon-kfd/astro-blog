@@ -36,7 +36,7 @@ thumbImg: https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=240
 
 因为该 API 较新，所以对传统的浏览器支持并不友好，所有 IE 浏览器都不支持。在[Can I use](https://caniuse.com/?search=Element.animate)上查询如下：
 
-![兼容性](https://s2.loli.net/2021/12/04/2xKyCauonPReYEH.png)
+![兼容性](https://cdn.kongfandong.cn/img/blog/2xKyCauonPReYEH.png)
 
 但是只要简单使用`if (dom.animate) {}`包裹即可向下兼容，对一些不支持的浏览器不执行动画就可以。
 
@@ -50,7 +50,7 @@ thumbImg: https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=240
 - FadeUpInOut: 旧文本先淡出新文本再淡入
 - Typewriter: 打字机特效
 
-![文字切换特效](https://s2.loli.net/2021/12/04/TKxs5kXyDIz8EPO.gif)
+![文字切换特效](https://cdn.kongfandong.cn/img/blog/TKxs5kXyDIz8EPO.gif)
 
 **淡入淡出**
 
@@ -129,7 +129,7 @@ thumbImg: https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=240
 
 本次使用原生`Element.animate()`API 实现了一个简单的图片切换特效。
 
-![图片切换动画特效](https://s2.loli.net/2021/12/04/1s6NA9winbcuPaM.gif)
+![图片切换动画特效](https://cdn.kongfandong.cn/img/blog/1s6NA9winbcuPaM.gif)
 
 这个特效主要原理：
 

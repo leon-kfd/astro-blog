@@ -10,7 +10,7 @@ thumbImg: https://images.unsplash.com/photo-1504292004442-f285299403fa?w=240
 
 一个浏览器首页站点, 包含可切换的常用搜索引擎搜索功能, 键盘布局添加快捷收藏网站, 并加入键盘按键监听可快速打开, 自定义背景图, 配置同步功能等功能
 
-系统半成品已部署与线上，在线访问：<a href="https://s.kongfandong.cn" target="_blank">https://s.kongfandong.cn</a>
+系统半成品已部署与线上，在线访问：<a href="https://howdz.xyz" target="_blank">https://howdz.xyz</a>
 
 ### 目录
 
@@ -106,7 +106,7 @@ handleInputKeyDown (e) {
 <div class="no-icon">{{userSettingKeyMap[key].remark.slice(0,1)}}</div>
 ```
 
-![添加展示](https://s2.loli.net/2021/12/04/kcrP38wJedoSsqT.gif)
+![添加展示](https://cdn.kongfandong.cn/img/blog/kcrP38wJedoSsqT.gif)
 
 ## 背景图切换功能
 
@@ -314,7 +314,7 @@ export default new Vuex.Store({
 });
 ```
 
-![背景切换展示](https://s2.loli.net/2021/12/04/leuj5U6YL7GzDZo.gif)
+![背景切换展示](https://cdn.kongfandong.cn/img/blog/leuj5U6YL7GzDZo.gif)
 
 _当前并未实现自定义图片上传功能，后续进行优化_
 
@@ -356,6 +356,6 @@ _因系统功能完全是单页面完成，删除了 vue-router 功能，涉及�
 2. Unsplash 提供的图片 api 接口，可以判断当前用户的设备，例如区分手机端和 PC 端，然后更改请求部分参数使其返回不同大小的图片。
 3. 将图片缓存到浏览器中。
 
-系统半成品已部署与线上，在线访问：<a href="https://s.kongfandong.cn" target="_blank">https://s.kongfandong.cn</a>
+系统半成品已部署与线上，在线访问：<a href="https://howdz.xyz" target="_blank">https://howdz.xyz</a>
 
 _以上内容未经授权请勿随意转载。_

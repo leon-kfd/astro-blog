@@ -87,7 +87,7 @@ export default ({ app, store }, inject) => {
 
 使用定位 + transition + transform + 贝塞尔曲线模拟抛物线动画效果
 
-![抛物线动画](https://s2.loli.net/2021/12/04/GSIrLKOJPXNV1pW.gif)
+![抛物线动画](https://cdn.kongfandong.cn/img/blog/GSIrLKOJPXNV1pW.gif)
 
 将过渡动画 left 设为线性，top 设为为 cubic-bezier(0.56, 0.15, 0.43, 0.85)时，在执行过渡时就能模拟出元素一个抛物线运动，曲线函数可以在 Chrome 控制台试出来
 
@@ -214,15 +214,15 @@ router.get("/query", async (ctx) => {
 ## 网站截图
 
 1. **首页**
-   ![首页.jpg](https://s2.loli.net/2021/12/04/wxI5W4KsCBYncuk.png)
+   ![首页.jpg](https://cdn.kongfandong.cn/img/blog/wxI5W4KsCBYncuk.png)
 2. **搜索页**
-   ![搜索.jpg](https://s2.loli.net/2021/12/04/kPg3fHJIsMvD68o.png)
+   ![搜索.jpg](https://cdn.kongfandong.cn/img/blog/kPg3fHJIsMvD68o.png)
 3. **购物车**
-   ![购物车.jpg](https://s2.loli.net/2021/12/04/iLDbIzdspo3tgwy.png)
+   ![购物车.jpg](https://cdn.kongfandong.cn/img/blog/iLDbIzdspo3tgwy.png)
 4. **订单**
-   ![订单.jpg](https://s2.loli.net/2021/12/04/uIpYdnAq4Kb35WP.png)
+   ![订单.jpg](https://cdn.kongfandong.cn/img/blog/uIpYdnAq4Kb35WP.png)
 5. **个人中心**
-   ![个人中心.jpg](https://s2.loli.net/2021/12/04/xL51dQUCFKh4Tfz.png)
+   ![个人中心.jpg](https://cdn.kongfandong.cn/img/blog/xL51dQUCFKh4Tfz.png)
 
 **PS: 该项目仅作学习交流所用，不可作商业用途，所有图片来源于网上**
 

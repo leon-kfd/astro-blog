@@ -11,7 +11,7 @@ thumbImg: https://images.unsplash.com/photo-1543286386-713bdd548da4?w=240
 Dashboard 是一个笔者基于`Vite` + `Vue3` + `Typesript`开发的项目，个性化的浏览器导航首页面板，支持自定义添加组件，可编辑组件各种属性。响应式设计，可自定义随机壁纸背景图。
 
 - <a href="https://github.com/leon-kfd/Dashboard/" target="_blank">⚡Github</a>
-- <a href="https://s.kongfandong.cn" target="_blank">💡Demo</a>
+- <a href="https://howdz.xyz" target="_blank">💡Demo</a>
 
 ## 功能特性
 
@@ -19,7 +19,7 @@ Dashboard 是一个笔者基于`Vite` + `Vue3` + `Typesript`开发的项目，�
 
 面板可基于响应式设计布局，添加组件时可选择`FR`单位，FR 单位会基于当前屏幕宽度动态计算出组件宽度。当然也可以使用`PX`固定长度单位，一般建议是宽度使用`FR`而高度使用`PX`。
 
-![组件长度单位](https://s2.loli.net/2021/12/04/VCLtW3Ad9hPGs6w.jpg)
+![组件长度单位](https://cdn.kongfandong.cn/img/blog/VCLtW3Ad9hPGs6w.jpg)
 
 #### 💫 布局模式
 
@@ -45,7 +45,7 @@ Dashboard 是一个笔者基于`Vite` + `Vue3` + `Typesript`开发的项目，�
 
 当前提供了多种物料组件，例如时钟、天气、搜索栏等，后面会陆续添加更多的组件。组件引入采用按需加载，没有使用的组件不会在初始化时加载。
 
-![物料组件选择](https://s2.loli.net/2021/12/04/MfEHxtZsjQu6Tr4.jpg)
+![物料组件选择](https://cdn.kongfandong.cn/img/blog/MfEHxtZsjQu6Tr4.jpg)
 
 ## 物料组件
 

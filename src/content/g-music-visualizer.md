@@ -155,7 +155,7 @@ export class MusicVisualizer {
 ['t', x, y],
 ```
 
-![简单示例](https://s2.loli.net/2021/12/04/gq5J82LKisQHxbI.gif)
+![简单示例](https://cdn.kongfandong.cn/img/blog/gq5J82LKisQHxbI.gif)
 
 代码参考如下:
 
@@ -241,7 +241,7 @@ export function getImageCircle(
 
 如下图, **l = cos(θ) \* r**, **t = sin(θ) \* r**, 通过圆心 O 坐标加上偏移量即可算出点 A 坐标。
 
-![获取圆上的点](https://s2.loli.net/2021/12/04/ePWZhx8tjOlBvuk.png)
+![获取圆上的点](https://cdn.kongfandong.cn/img/blog/ePWZhx8tjOlBvuk.png)
 
 ```ts
 // POINT_NUM = 64 柱状条数
@@ -321,7 +321,7 @@ useEffect(() => {
 
 ### 在圆上的点跟随圆放大的同时做圆周运动
 
-![圆周运动](https://s2.loli.net/2021/12/04/Hu7aUsYVJ2oQyLK.gif)
+![圆周运动](https://cdn.kongfandong.cn/img/blog/Hu7aUsYVJ2oQyLK.gif)
 
 示例五中的动画会出现在圆上的点跟随圆放大的同时做圆周运动，这种动画在实现时有两种方案：
 

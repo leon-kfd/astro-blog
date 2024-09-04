@@ -99,10 +99,10 @@ router.post("/login", async (ctx) => {
 若未登录直接访问静态资源，则回返回错误信息。
 
 **未登录直接访问**
-![未登录.jpg](https://s2.loli.net/2021/12/04/s7aVyTikBU3dGmt.png)
+![未登录.jpg](https://cdn.kongfandong.cn/img/blog/s7aVyTikBU3dGmt.png)
 
 **登录后在访问**
-![已登录.jpg](https://s2.loli.net/2021/12/04/KE2a5xBTAkhNUnm.png)
+![已登录.jpg](https://cdn.kongfandong.cn/img/blog/KE2a5xBTAkhNUnm.png)
 
 ### 断点续传与文件秒传
 
@@ -195,7 +195,7 @@ methods: {
 
 Vue-simple-uploader 文件列表状态需要加入计算 MD5 相关状态，可以通过 css 为原文件列表增加多一层 md5 状态层，然后通过相关事件进行显隐。
 
-![md5-status.jpg](https://s2.loli.net/2021/12/04/xF1pgQ9WGhZ7X6i.png)
+![md5-status.jpg](https://cdn.kongfandong.cn/img/blog/xF1pgQ9WGhZ7X6i.png)
 
 #### 断点续传
 
@@ -207,7 +207,7 @@ testChunks 属性设为 true（默认）时，每个切片会先发送一个不�
 
 例：文件上传到一半，点了暂停，然后刷新网页，再重新上传。文件校验完 Md5 后，预探请求返回已存在的切片数组[1~25]，然后真正切片请求会直接从第 26 片开始上传。
 
-![续传.jpg](https://s2.loli.net/2021/12/04/asoDtjuVrNLdFyX.png)
+![续传.jpg](https://cdn.kongfandong.cn/img/blog/asoDtjuVrNLdFyX.png)
 
 **前端处理**
 
@@ -332,12 +332,12 @@ router.post("/upload", async (ctx) => {
 
 在 upload 请求中，对每个切片使用 nodejs 管道流进行读写，将文件保留在 chunk 文件夹中，并以 md5 值为文件名，存放目标文件的切片。当遇到最后一个切片时，执行合并文件操作（需要注意，最后一个切片由于流未关闭，这个时刻最后一个切片文件是还没保存到本地，只是可以直接读取临时文件）。合并文件完成后，删除切片文件夹，并更新数据库信息，记录该文件已经完成。
 
-![切片存放.jpg](https://s2.loli.net/2021/12/04/lLGko4FJcxUs1n8.png)
+![切片存放.jpg](https://cdn.kongfandong.cn/img/blog/lLGko4FJcxUs1n8.png)
 
 当上传一个本地已经存在的文件时，由于数据库记录了该 md5 文件是已经完成的，所以预探请求会返回全部切片数组，前端就不会再发送 upload 请求从而实现了文件秒传。即使上传的目标目录与本地已存在文件处在不同目录，在预探请求时识别到时，也会进行复制操作，前端也不需要再传。
 
 **断点续传演示**
-![断点续传.gif](https://s2.loli.net/2021/12/04/tXQRgNm752BCyY9.gif)
+![断点续传.gif](https://cdn.kongfandong.cn/img/blog/tXQRgNm752BCyY9.gif)
 
 上传过程暂停，然后刷新页面，重新上传同一个文件，可以发现文件是从上传暂停的地方重新开始。
 
