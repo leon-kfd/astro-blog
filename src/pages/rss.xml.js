@@ -10,7 +10,7 @@ export const get = () => rss({
   items: posts.map(post => {
     const matchURL = post.file.match(/[^/]+(?=\.md)/g)[0]
     return {
-      link: `${import.meta.env.SITE}blog/${matchURL}`,
+      link: `${import.meta.env.SITE}/blog/${matchURL}`,
       title: post.frontmatter.title,
       pubDate: post.frontmatter.date,
       description: post.frontmatter.desc
